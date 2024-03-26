@@ -1,0 +1,162 @@
+InvoiceNo,StockCode,Description,Quantity,InvoiceDate,UnitPrice,CustomerID,Country,Gender,Category
+536365,85123A,White Hanging Heart T-Light Holder,6,2010-12-01,2.55,17850.0,United Kinggdom,M,Furniture & Decor
+536365,71053,White Metal Lantern,6,2010-12-01,3.39,17850.0,United Kingdom,M,Furniture & Decor
+536365,84406B,Cream Cupid Hearts Coat Hanger,8,2010-12-01,2.75,17850.0,United Kingdom,M,Home & Kitchen
+536365,84029G,Knitted Union Flag Hot Water Bottle,6,2010-12-01,3.39,17850.0,United Kingdom,M,Home & Kitchen
+536365,84029E,Red Woolly Hottie White Heart.,6,2010-12-01,3.39,17850.0,United Kingkdom,M,Home & Kitchen
+536365,22752,Set 7 Babushka Nesting Boxes,2,2010-12-01,7.65,17850.0,United Kingddom,M,Home & Kitchen
+536365,21730,Glass Star Frosted T-Light Holder,6,2010-12-01,4.25,17850.0,United Kingdom,M,Furniture & Decor
+536366,22633,Hand Warmer Union Jack,6,2010-12-01,1.85,17850.0,United Kingdom,M,Clothing & Apparel
+536366,22632,Hand Warmer Red Polka Dot,6,2010-12-01,1.85,17850.0,United Kingdom,M,Clothing & Apparel
+536367,84879,Assorted Colour Bird Ornament,32,2010-12-01,1.69,13047.0,United Kingdom,M,Furniture & Decor
+536367,22745,Poppy'S Playhouse Bedroom ,6,2010-12-01,2.1,13047.0,United Kingdom,M,Toys & Games
+536367,22748,Poppy'S Playhouse Kitchen,6,2010-12-01,2.1,13047.0,United Kingdom,M,Toys & Games
+536367,22749,Feltcraft Princess Charlotte Doll,8,2010-12-01,3.75,13047.0,United Kingdom,M,Toys & Games
+536367,22310,Ivory Knitted Mug Cosy ,6,2010-12-01,1.65,13047.0,United Kingdom,M,Home & Kitchen
+536367,84969,Box Of 6 Assorted Colour Teaspoons,6,2010-12-01,4.25,13047.0,United Kingdom,M,Home & Kitchen
+536367,22623,Box Of Vintage Jigsaw Blocks ,3,2010-12-01,4.95,13047.0,United Kingdom,M,Furniture & Decor
+536367,22622,Box Of Vintage Alphabet Blocks,2,2010-12-01,9.95,13047.0,United Kingdom,M,Furniture & Decor
+536367,21754,Home Building Block Word,3,2010-12-01,5.95,13047.0,United Kingdom,M,Furniture & Decor
+536367,21755,Love Building Block Word,3,2010-12-01,5.95,13047.0,United Kingdom,M,Furniture & Decor
+536367,21777,Recipe Box With Metal Heart,4,2010-12-01,7.95,13047.0,United Kingdom,M,Furniture & Decor
+536367,48187,Doormat New England,4,2010-12-01,7.95,13047.0,United Kingdom,M,Furniture & Decor
+536368,22960,Jam Making Set With Jars,6,2010-12-01,4.25,13047.0,United Kingdom,M,Home & Kitchen
+536368,22913,Red Coat Rack Paris Fashion,3,2010-12-01,4.95,13047.0,United Kingdom,M,Furniture & Decor
+536368,22912,Yellow Coat Rack Paris Fashion,3,2010-12-01,4.95,13047.0,United Kingdom,M,Furniture & Decor
+536368,22914,Blue Coat Rack Paris Fashion,3,2010-12-01,4.95,13047.0,United Kingdom,M,Furniture & Decor
+536369,21756,Bath Building Block Word,3,2010-12-01,5.95,13047.0,United Kingdom,M,Furniture & Decor
+C539438,22655,Vintage Red Kitchen Cabinet,-1,2010-12-17,295.0,16607.0,United Kingdom,F,Furniture & Decor
+539439,16156S,Wrap Pink Fairy Cakes ,25,2010-12-17,0.42,13869.0,United Kingdom,M,Beauty & Personal Care
+539439,21499,Blue Polkadot Wrap,25,2010-12-17,0.42,13869.0,United Kingdom,M,Beauty & Personal Care
+539439,85232A,Set/3 Polkadot Stacking Tins,3,2010-12-17,4.95,13869.0,United Kingdom,M,Home & Kitchen
+539439,22470,Heart Of Wicker Large,6,2010-12-17,2.95,13869.0,United Kingdom,M,Home & Kitchen
+539439,20749,Assorted Colour Mini Cases,2,2010-12-17,7.95,13869.0,United Kingdom,M,Toys & Games
+539439,85123A,White Hanging Heart T-Light Holder,6,2010-12-17,2.95,13869.0,United Kingdom,M,Furniture & Decor
+539439,22300,Coffee Mug Dog + Ball Design,6,2010-12-17,2.55,13869.0,United Kingdom,M,Home & Kitchen
+539439,22301,Coffee Mug Cat + Bird Design,6,2010-12-17,2.55,13869.0,United Kingdom,M,Home & Kitchen
+539439,21868,Potting Shed Tea Mug,12,2010-12-17,1.25,13869.0,United Kingdom,M,Home & Kitchen
+539439,22988,Soldiers Egg Cup ,12,2010-12-17,1.25,13869.0,United Kingdom,M,Sports & Outdoors
+539439,22776,Sweetheart Cakestand 3 Tier,2,2010-12-17,9.95,13869.0,United Kingdom,M,Automotive
+539439,22840,Round Cake Tin Vintage Red,2,2010-12-17,7.95,13869.0,United Kingdom,M,Home & Kitchen
+539439,22841,Round Cake Tin Vintage Green,2,2010-12-17,7.95,13869.0,United Kingdom,M,Home & Kitchen
+539439,21730,Glass Star Frosted T-Light Holder,3,2010-12-17,4.95,13869.0,United Kingdom,M,Furniture & Decor
+539439,85062,Pearl Crystal Pumpkin T-Light Hldr,12,2010-12-17,1.65,13869.0,United Kingdom,M,Furniture & Decor
+539439,84945,Multi Colour Silver T-Light Holder,12,2010-12-17,0.85,13869.0,United Kingdom,M,Furniture & Decor
+539439,21055,Tool Box Soft Toy ,2,2010-12-17,8.95,13869.0,United Kingdom,M,Toys & Games
+539439,21054,Nurse'S Bag Soft Toy,2,2010-12-17,8.95,13869.0,United Kingdom,M,Toys & Games
+539439,84879,Assorted Colour Bird Ornament,8,2010-12-17,1.69,13869.0,United Kingdom,M,Furniture & Decor
+539439,20969,Red Floral Feltcraft Shoulder Bag,4,2010-12-17,3.75,13869.0,United Kingdom,M,Clothing & Apparel
+539439,20970,Pink Floral Feltcraft Shoulder Bag,4,2010-12-17,3.75,13869.0,United Kingdom,M,Clothing & Apparel
+539440,22655,Vintage Red Kitchen Cabinet,2,2010-12-17,125.0,16607.0,United Kingdom,F,Furniture & Decor
+539442,22314,Office Mug Warmer Choc+Blue,12,2010-12-17,2.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,22865,Hand Warmer Owl Design,12,2010-12-17,2.1,16558.0,United Kingdom,F,Health & Wellness
+539442,21481,Fawn Blue Hot Water Bottle,6,2010-12-17,2.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,22112,Chocolate Hot Water Bottle,6,2010-12-17,4.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,21232,Strawberry Ceramic Trinket Box,12,2010-12-17,1.25,16558.0,United Kingdom,F,Books & Media
+539442,22720,Set Of 3 Cake Tins Pantry Design ,3,2010-12-17,4.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,22966,Gingerbread Man Cookie Cutter,12,2010-12-17,1.25,16558.0,United Kingdom,F,Home & Kitchen
+539442,22423,Regency Cakestand 3 Tier,2,2010-12-17,12.75,16558.0,United Kingdom,F,Toys & Games
+539442,22699,Roses Regency Teacup And Saucer ,6,2010-12-17,2.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,22697,Green Regency Teacup And Saucer,6,2010-12-17,2.95,16558.0,United Kingdom,F,Home & Kitchen
+539442,22300,Coffee Mug Dog + Ball Design,6,2010-12-17,2.55,16558.0,United Kingdom,F,Home & Kitchen
+539442,22301,Coffee Mug Cat + Bird Design,6,2010-12-17,2.55,16558.0,United Kingdom,F,Home & Kitchen
+539442,22693,Grow A Flytrap Or Sunflower In Tin,24,2010-12-17,1.25,16558.0,United Kingdom,F,Sports & Outdoors
+539442,22469,Heart Of Wicker Small,12,2010-12-17,1.65,16558.0,United Kingdom,F,Home & Kitchen
+539442,22894,Tablecloth Red Apples Design ,2,2010-12-17,8.5,16558.0,United Kingdom,F,Furniture & Decor
+539443,22988,Soldiers Egg Cup ,144,2010-12-17,1.06,14031.0,United Kingdom,F,Sports & Outdoors
+539443,22111,Scottie Dog Hot Water Bottle,24,2010-12-17,4.25,14031.0,United Kingdom,F,Home & Kitchen
+539443,21658,Glass  Beurre Dish,24,2010-12-17,3.39,14031.0,United Kingdom,F,Beauty & Personal Care
+539443,37370,Retro Coffee Mugs Assorted,72,2010-12-17,1.06,14031.0,United Kingdom,F,Home & Kitchen
+539443,22423,Regency Cakestand 3 Tier,16,2010-12-17,10.95,14031.0,United Kingdom,F,Toys & Games
+539443,84029G,Knitted Union Flag Hot Water Bottle,24,2010-12-17,3.39,14031.0,United Kingdom,F,Home & Kitchen
+539444,85199L,Large Hanging Ivory & Red Wood Bird,12,2010-12-17,0.65,14146.0,United Kingdom,F,Toys & Games
+539444,85199S,Small Hanging Ivory/Red Wood Bird,24,2010-12-17,0.42,14146.0,United Kingdom,F,Clothing & Apparel
+539444,22299,Pig Keyring With Light & Sound ,24,2010-12-17,1.25,14146.0,United Kingdom,F,Beauty & Personal Care
+539444,22746,Poppy'S Playhouse Livingroom ,6,2010-12-17,2.1,14146.0,United Kingdom,F,Toys & Games
+539444,22745,Poppy'S Playhouse Bedroom ,6,2010-12-17,2.1,14146.0,United Kingdom,F,Toys & Games
+539444,21675,Butterflies Stickers,12,2010-12-17,0.85,14146.0,United Kingdom,F,Toys & Games
+539444,21677,Hearts  Stickers,12,2010-12-17,0.85,14146.0,United Kingdom,F,Toys & Games
+539444,20971,Pink Blue Felt Craft Trinket Box,12,2010-12-17,1.25,14146.0,United Kingdom,F,Automotive
+539444,20972,Pink Cream Felt Craft Trinket Box ,12,2010-12-17,1.25,14146.0,United Kingdom,F,Automotive
+539444,22418,10 Colour Spaceboy Pen,24,2010-12-17,0.85,14146.0,United Kingdom,F,Toys & Games
+539444,22752,Set 7 Babushka Nesting Boxes,24,2010-12-17,7.65,14146.0,United Kingdom,F,Home & Kitchen
+539444,21484,Chick Grey Hot Water Bottle,36,2010-12-17,2.95,14146.0,United Kingdom,F,Home & Kitchen
+539444,21481,Fawn Blue Hot Water Bottle,36,2010-12-17,2.55,14146.0,United Kingdom,F,Home & Kitchen
+539444,22837,Hot Water Bottle Babushka ,36,2010-12-17,4.25,14146.0,United Kingdom,F,Home & Kitchen
+539444,22074,6 Ribbons Shimmering Pinks ,12,2010-12-17,1.65,14146.0,United Kingdom,F,Furniture & Decor
+539444,22653,Button Box ,10,2010-12-17,1.95,14146.0,United Kingdom,F,Automotive
+539444,22652,Travel Sewing Kit,10,2010-12-17,1.65,14146.0,United Kingdom,F,Home & Kitchen
+539444,22654,Deluxe Sewing Kit ,3,2010-12-17,5.95,14146.0,United Kingdom,F,Home & Kitchen
+539444,21874,Gin And Tonic Mug,12,2010-12-17,1.25,14146.0,United Kingdom,F,Home & Kitchen
+539444,22423,Regency Cakestand 3 Tier,2,2010-12-17,12.75,14146.0,United Kingdom,F,Toys & Games
+539444,22398,Magnets Pack Of 4 Swallows,12,2010-12-17,1.25,14146.0,United Kingdom,F,Furniture & Decor
+539444,22969,Homemade Jam Scented Candles,24,2010-12-17,1.45,14146.0,United Kingdom,F,Home & Kitchen
+539444,22845,Vintage Cream Cat Food Container,2,2010-12-17,6.35,14146.0,United Kingdom,F,Automotive
+539444,22844,Vintage Cream Dog Food Container,2,2010-12-17,8.5,14146.0,United Kingdom,F,Furniture & Decor
+539444,22853,Cat Bowl Vintage Cream,6,2010-12-17,3.25,14146.0,United Kingdom,F,Home & Kitchen
+539444,22852,Dog Bowl Vintage Cream,4,2010-12-17,4.25,14146.0,United Kingdom,F,Home & Kitchen
+539444,22219,Lovebird Hanging Decoration White ,12,2010-12-17,0.85,14146.0,United Kingdom,F,Furniture & Decor
+539444,21340,Classic Metal Birdcage Plant Holder,8,2010-12-17,9.95,14146.0,United Kingdom,F,Home & Kitchen
+539444,22077,6 Ribbons Rustic Charm,12,2010-12-17,1.65,14146.0,United Kingdom,F,Furniture & Decor
+539444,85049E,Scandinavian Reds Ribbons,12,2010-12-17,1.25,14146.0,United Kingdom,F,Furniture & Decor
+539444,22075,6 Ribbons Elegant Christmas ,12,2010-12-17,1.65,14146.0,United Kingdom,F,Furniture & Decor
+539444,84946,Antique Silver Tea Glass Etched,12,2010-12-17,1.25,14146.0,United Kingdom,F,Toys & Games
+539444,84945,Multi Colour Silver T-Light Holder,12,2010-12-17,0.85,14146.0,United Kingdom,F,Furniture & Decor
+539444,22810,Set Of 6 T-Lights Snowmen,48,2010-12-17,2.55,14146.0,United Kingdom,F,Furniture & Decor
+539444,22834,Hand Warmer Babushka Design,48,2010-12-17,0.85,14146.0,United Kingdom,F,Beauty & Personal Care
+539445,21539,Red Retrospot Butter Dish,12,2010-12-17,4.95,17865.0,United Kingdom,F,Electronics
+539445,22423,Regency Cakestand 3 Tier,16,2010-12-17,10.95,17865.0,United Kingdom,F,Toys & Games
+539445,21527,Red Retrospot Traditional Teapot ,4,2010-12-17,7.95,17865.0,United Kingdom,F,Home & Kitchen
+539445,22309,Tea Cosy Red  Stripe,6,2010-12-17,2.55,17865.0,United Kingdom,F,Furniture & Decor
+539445,82483,Wood 2 Drawer Cabinet White Finish,4,2010-12-17,5.95,17865.0,United Kingdom,F,Furniture & Decor
+539445,37448,Ceramic Cake Design Spotted Mug,12,2010-12-17,1.49,17865.0,United Kingdom,F,Home & Kitchen
+539446,22834,Hand Warmer Babushka Design,48,2010-12-17,0.85,12705.0,Germany,F,Beauty & Personal Care
+539446,84660C,Pink Stitched Wall Clock,20,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539446,84012,Magic Sheep Wool Growing From Paper,24,2010-12-17,0.85,12705.0,Germany,F,Clothing & Apparel
+539446,70006,Love Heart Pocket Warmer,30,2010-12-17,0.42,12705.0,Germany,F,Automotive
+539446,84674,Flying Pig Watering Can,24,2010-12-17,1.25,12705.0,Germany,F,Beauty & Personal Care
+539446,84660B,Black Stitched Wall Clock,20,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539446,84660A,White Stitched Wall Clock,20,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539446,22837,Hot Water Bottle Babushka ,8,2010-12-17,4.65,12705.0,Germany,F,Home & Kitchen
+539446,21481,Fawn Blue Hot Water Bottle,12,2010-12-17,2.95,12705.0,Germany,F,Home & Kitchen
+539446,22113,Grey Heart Hot Water Bottle,12,2010-12-17,3.75,12705.0,Germany,F,Home & Kitchen
+539446,84030E,English Rose Hot Water Bottle,4,2010-12-17,4.25,12705.0,Germany,F,Home & Kitchen
+539446,22254,Felt Toadstool Large,12,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539446,22255,Felt Toadstool  Small,12,2010-12-17,0.85,12705.0,Germany,F,Home & Kitchen
+539446,22326,Round Snack Boxes Set Of4 Woodland ,6,2010-12-17,2.95,12705.0,Germany,F,Home & Kitchen
+539446,22328,Round Snack Boxes Set Of 4 Fruits ,6,2010-12-17,2.95,12705.0,Germany,F,Home & Kitchen
+539446,22659,Lunch Box I Love London,24,2010-12-17,1.95,12705.0,Germany,F,Home & Kitchen
+539446,21426,Woodland Storage Box Small,6,2010-12-17,2.1,12705.0,Germany,F,Toys & Games
+539446,21424,Woodland Storage Box Large ,6,2010-12-17,2.95,12705.0,Germany,F,Toys & Games
+539446,21731,Red Toadstool Led Night Light,12,2010-12-17,1.65,12705.0,Germany,F,Home & Kitchen
+539446,20712,Jumbo Bag Woodland Animals,20,2010-12-17,1.95,12705.0,Germany,F,Clothing & Apparel
+539446,21232,Strawberry Ceramic Trinket Box,12,2010-12-17,1.25,12705.0,Germany,F,Books & Media
+539446,21231,Sweetheart Ceramic Trinket Box,12,2010-12-17,1.25,12705.0,Germany,F,Automotive
+539446,22892,Set Of Salt And Pepper Toadstools,12,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539446,22423,Regency Cakestand 3 Tier,4,2010-12-17,12.75,12705.0,Germany,F,Toys & Games
+539446,22221,Cake Stand Lovebird 2 Tier Pink,2,2010-12-17,9.95,12705.0,Germany,F,Home & Kitchen
+539446,22236,Cake Stand 3 Tier Magic Garden,2,2010-12-17,12.75,12705.0,Germany,F,Home & Kitchen
+539446,22223,Cake Plate Lovebird Pink,3,2010-12-17,4.95,12705.0,Germany,F,Home & Kitchen
+539446,22222,Cake Plate Lovebird White,3,2010-12-17,4.95,12705.0,Germany,F,Home & Kitchen
+539446,21871,Save The Planet Mug,12,2010-12-17,1.25,12705.0,Germany,F,Home & Kitchen
+539447,22630,Dolly Girl Lunch Box,12,2010-12-17,1.95,12395.0,Belgium,M,Home & Kitchen
+539447,21880,Red Retrospot Tape,24,2010-12-17,0.19,12395.0,Belgium,M,Books & Media
+539447,21879,Hearts Gift Tape,24,2010-12-17,0.19,12395.0,Belgium,M,Books & Media
+539447,22390,Paperweight Childhood Memories,12,2010-12-17,0.85,12395.0,Belgium,M,Home & Kitchen
+539447,22504,Cabin Bag Vintage Retrospot,3,2010-12-17,12.75,12395.0,Belgium,M,Electronics
+539447,22740,Polkadot Pen,48,2010-12-17,0.85,12395.0,Belgium,M,Clothing & Apparel
+539447,22754,Small Red Babushka Notebook ,12,2010-12-17,0.85,12395.0,Belgium,M,Books & Media
+539447,22755,Small Purple Babushka Notebook ,12,2010-12-17,0.85,12395.0,Belgium,M,Books & Media
+539447,22667,Recipe Box Retrospot ,12,2010-12-17,2.95,12395.0,Belgium,M,Furniture & Decor
+539447,22666,Recipe Box Pantry Yellow Design,6,2010-12-17,2.95,12395.0,Belgium,M,Home & Kitchen
+539447,84906,Pink B'Fly C/Cover W Bobbles,2,2010-12-17,5.95,12395.0,Belgium,M,Health & Wellness
+539447,46000U,Polyester Filler Pad 30Cmx30Cm,2,2010-12-17,1.25,12395.0,Belgium,M,Toys & Games
+539447,22629,Spaceboy Lunch Box ,12,2010-12-17,1.95,12395.0,Belgium,M,Home & Kitchen
+539447,22355,Charlotte Bag Suki Design,10,2010-12-17,0.85,12395.0,Belgium,M,Clothing & Apparel
+539447,22356,Charlotte Bag Pink Polkadot,10,2010-12-17,0.85,12395.0,Belgium,M,Clothing & Apparel
+539447,20719,Woodland Charlotte Bag,10,2010-12-17,0.85,12395.0,Belgium,M,Clothing & Apparel
+539447,20724,Red Retrospot Charlotte Bag,10,2010-12-17,0.85,12395.0,Belgium,M,Clothing & Apparel
+539447,21258,Victorian Sewing Box Large,1,2010-12-17,12.75,12395.0,Belgium,M,Home & Kitchen
+C539448,20802,Small Glass Sundae Dish Clear,-36,2010-12-17,0.42,15157.0,United Kingdom,F,Toys & Games
+C539448,20803,Small Pink Glass Sundae Dish,-36,2010-12-17,0.42,15157.0,United Kingdom,F,Toys & Games
+539450,21700,Big Doughnut Fridge Magnets,1,2010-12-17,0.85,15570.0,United Kingdom,F,Furniture & Decor
