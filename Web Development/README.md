@@ -53,7 +53,7 @@ For Windows
 pip install -r requirements.txt
 ```
 
-To run website, open two terminals for `client` and `server`
+To run website, open three terminals for `client`, `BE_Controller server` and `BE_PA2 server`
 
 ### client (Vue)
 
