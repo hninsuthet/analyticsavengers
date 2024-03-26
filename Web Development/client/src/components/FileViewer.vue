@@ -122,11 +122,23 @@ const navigatetosummarystatsclv = async () => {
 };
 
 // Define rundescriptivediagnostic function
-// const rundescriptivediagnostic = async () => {
-//     // Call the functions as needed
-//     await DataAnalysis();
-//     await navigatetosummarystatsclv();
-// };
+const analysiswithdashboard = async () => {
+    // Call the DataAnalysis function
+    await DataAnalysis();
+
+    // Display the modal once data analysis is done
+    const modal = document.getElementById('analysisModal');
+    modal.style.display = "block";
+
+    // Add event listener for the close button
+    document.querySelector('.close').addEventListener('click', async function() {
+        // Hide the modal when the close button is clicked
+        modal.style.display = "none";
+        
+        // Call the navigatetodashboard function after the modal is closed
+        await navigatetodashboard();
+    });
+};
 
 </script>
 
@@ -287,7 +299,7 @@ const navigatetosummarystatsclv = async () => {
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-light border-light-subtle" data-bs-dismiss="modal"
-                            @click="DataAnalysis()">Ok</button>
+                            @click="analysiswithdashboard()">Ok</button>
                     </div>
                 </div>
             </div>
