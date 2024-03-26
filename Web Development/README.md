@@ -13,15 +13,18 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ### Python Flask
+
 1. Start by creating a [Python Flask Environment](https://flask.palletsprojects.com/en/3.0.x/installation/)
 
 For macOS/Linux
+
 ```sh
 $ cd "Web Development"
 $ python3 -m venv .venv
 ```
 
 For Windows
+
 ```sh
 > cd "Web Development"
 > py -3 -m venv .venv
@@ -30,11 +33,13 @@ For Windows
 2. Activating the environment
 
 For macOS/Linux
+
 ```sh
 $ . .venv/bin/activate
 ```
 
 For Windows
+
 ```sh
 > .venv\Scripts\activate
 
@@ -43,26 +48,41 @@ For Windows
 ```
 
 3. Navigate to `server` folder and type:
+
 ```sh
 pip install -r requirements.txt
 ```
 
 To run website, open two terminals for `client` and `server`
+
 ### client (Vue)
 
 1. Navigate to `client` folder and type:
+
 ```sh
 npm install #if npm is not installed yet
 npm install d3 #install d3
+npm install vue-loading-overlay # install loading indicator
 npm run dev
 
 ```
 
-### server (Python flask)
+### BE Controller server (Python flask)
 
-1. Navigate to `server` folder and type:
+1. Navigate to `BE_Controller` folder and type:
+
 ```sh
-flask run
+python app.py
+
+pip install --upgrade flask werkzeug #ensure to use latest version of flask
+```
+
+### BE PA2 server (Python flask)
+
+1. Navigate to `BE_PA2` folder and type:
+
+```sh
+python app.py
 
 pip install --upgrade flask werkzeug #ensure to use latest version of flask
 ```
