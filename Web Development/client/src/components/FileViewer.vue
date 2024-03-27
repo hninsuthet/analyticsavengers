@@ -118,7 +118,7 @@ const DataAnalysis = async () => {
 
 // Define navigatetosummarystatsclv function separately
 const navigatetodashboard = async () => {
-    window.location.href = 'http://localhost/analyticsavengers/Web%20Development/client/src/dashboard.html';
+    window.location.href = '/src/dashboard.html';
 };
 
 // Define rundescriptivediagnostic function
