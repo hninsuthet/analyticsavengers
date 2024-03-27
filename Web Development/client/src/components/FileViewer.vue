@@ -117,14 +117,14 @@ const DataAnalysis = async () => {
 };
 
 // Define navigatetosummarystatsclv function separately
-const navigatetosummarystatsclv = async () => {
-    window.location.href = 'http://localhost/IS483/Charts/summarystatsclv.html';
+const navigatetodashboard = async () => {
+    window.location.href = 'http://localhost/analyticsavengers/Web%20Development/client/src/dashboard.html';
 };
 
 // Define rundescriptivediagnostic function
 const analysiswithdashboard = async () => {
     // Call the DataAnalysis function
-    await DataAnalysis();
+    // await DataAnalysis();
 
     // Display the modal once data analysis is done
     const modal = document.getElementById('analysisModal');
@@ -305,6 +305,17 @@ const analysiswithdashboard = async () => {
             </div>
         </div>
 
+        <!-- Analysis Done Pop Up -->
+        <div id="analysisModal" class="modal-afteranalysis">
+        <div class="modal-content-afteranalysis">
+            <span class="close">&times;</span>
+            <h2>Data Analysis Complete</h2>
+            <p>Your data analysis has finished successfully.</p>
+        </div>
+        </div>
+
+        
+
     </div>
 </template>
 
@@ -325,5 +336,40 @@ const analysiswithdashboard = async () => {
 .file-item {
     margin: 5px;
     border-bottom: 1px solid #ccc;
+}
+
+.modal-afteranalysis {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-afteranalysis {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 </style>
