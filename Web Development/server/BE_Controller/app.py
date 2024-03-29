@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_file, Response
+from flask import Flask, jsonify, request, send_file, Response, session
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
@@ -10,6 +10,7 @@ DEBUG = True
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+app.secret_key = 'BAD_SECRET_KEY'
 
 CORS(app, resources={r'/*': {'origins': '*'}})
 ALLOWED_EXTENSIONS = set(['csv', 'xlsx', 'json'])
@@ -31,7 +32,7 @@ def clean_data_from_client():
             data_key = response.json().get('data_key')
             cleaned_data_response = requests.get(f'{FLASK_2_URL}/get_cleaned_data/{data_key}')
             if cleaned_data_response.status_code == 200:
-            #     # Receive and process the cleaned data
+                # Receive and process the cleaned data
                 cleaned_data = cleaned_data_response.json()
 
                 # Process cleaned data as needed
@@ -66,12 +67,13 @@ def analyse_data_from_client():
         if response.status_code == 200:
             # Cleaning done, now retrieve the cleaned data
             data_key = response.json().get('data_key')
+            session['id'] = data_key
             analysed_data_response = requests.get(f'{FLASK_2_URL}/get_analysed_data/{data_key}')
             if analysed_data_response.status_code == 200:
                 # Receive and process the cleaned data
                 analysed_data = analysed_data_response.json()
-                analysed_data_storage[data_key + '_analysed'] = analysed_data
-                print(analysed_data_storage)
+                analysed_data_storage[data_key] = analysed_data
+                # print(analysed_data_storage)
                 return jsonify({"data_key": data_key}), 200
             else:
                 return "Failed to retrieve cleaned data from Flask 2", 500
@@ -79,24 +81,20 @@ def analyse_data_from_client():
             return "Failed to send data to Flask 2", 500
     return "Hello from Flask 1"
 
-
 @app.route('/get_analysed_data/<data_key>', methods=['GET'])
 def get_analysed_data(data_key):
+    print(data_key)
     print(analysed_data_storage)
-    if data_key in analysed_data_storage and data_key + '_analysed' in analysed_data_storage:
+
+    # Check if the data key exists
+    if data_key in analysed_data_storage:
         # Retrieve the cleaned data from storage
-        # cleaned_data_json = analysed_data_storage[data_key + '_analysed']
-        # print(cleaned_data_json)
-        return "cleaned_data_json, 200"
+        analysed_data_json = analysed_data_storage[data_key]
+        
+    #     # print(cleaned_data_json)
+        return analysed_data_json, 200
     else:
-        return "Data not found"
-
-
-@app.route('/test', methods=['GET', 'POST'])
-def test():
-    if request.method == 'POST':
-        print('Test')
-    return "Hello world from BE Controller."
+        return jsonify({"error": "No analysed data available for the provided key"}), 404
 
 
 if __name__ == '__main__':
