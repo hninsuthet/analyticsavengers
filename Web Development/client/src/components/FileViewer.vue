@@ -105,12 +105,12 @@ const DataAnalysis = async () => {
         const response = await axios.post(`${FLASK1_URL}/dataanalysis`, formData, { headers });
 
         if (response.status == 200) {
-            // console.log(response.data.data_key)
-            setTimeout(() => {
-                loader.hide()
-            }, 3000)
+            loader.hide()
+            await analysiswithdashboard();
+
         }
     } catch (err) {
+        console.log(err)
         throw new Error('Data Analysis failed')
         // console.error('Data Analysis failed:', error);
     }
@@ -131,11 +131,13 @@ const analysiswithdashboard = async () => {
     modal.style.display = "block";
 
     // Add event listener for the close button
-    document.querySelector('.close').addEventListener('click', async function() {
+    document.querySelector('.close').addEventListener('click', async function () {
         // Hide the modal when the close button is clicked
         modal.style.display = "none";
-        
+
         // Call the navigatetodashboard function after the modal is closed
+        // const loader = $loading.show({});
+        
         await navigatetodashboard();
     });
 };
@@ -299,7 +301,7 @@ const analysiswithdashboard = async () => {
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-light border-light-subtle" data-bs-dismiss="modal"
-                            @click="analysiswithdashboard()">Ok</button>
+                            @click="DataAnalysis()">Ok</button>
                     </div>
                 </div>
             </div>
@@ -307,14 +309,14 @@ const analysiswithdashboard = async () => {
 
         <!-- Analysis Done Pop Up -->
         <div id="analysisModal" class="modal-afteranalysis">
-        <div class="modal-content-afteranalysis">
-            <span class="close">&times;</span>
-            <h2>Data Analysis Complete</h2>
-            <p>Your data analysis has finished successfully.</p>
-        </div>
+            <div class="modal-content-afteranalysis">
+                <span class="close">&times;</span>
+                <h2>Data Analysis Complete</h2>
+                <p>Your data analysis has finished successfully.</p>
+            </div>
         </div>
 
-        
+
 
     </div>
 </template>
@@ -339,37 +341,37 @@ const analysiswithdashboard = async () => {
 }
 
 .modal-afteranalysis {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content-afteranalysis {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 </style>
