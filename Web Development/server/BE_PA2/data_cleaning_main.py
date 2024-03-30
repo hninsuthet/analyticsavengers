@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 # from textblob import TextBlob
 
 # Reading file
@@ -122,18 +123,50 @@ def clean_data(df):
 # For providing cleaned data
 def full_data_clean(filename, file): # remove argument: output_excel
     print("Processing data cleaning ...")
+    
+    # Initialise the start of processing time
+    start_time = time.time()
+
+    # Calculate the processing time
+    time1 = time.time()
+    reading_time = time1 - start_time
+    reading_time_minutes = int(reading_time // 60)
+    reading_time_seconds = int(reading_time % 60)
 
     # Read user file into a DataFrame
     df = read_file(filename, file)
+
+    # Evaluate metrics before cleaning
+    rows_before_cleaning = {"Number of Rows Before Cleaning": len(df)}
+    duplicates_before_cleaning = {"Number of Duplicates Before Cleaning": int(df.duplicated().sum())}
+    nullvalues_before_cleaning = { "Number of Null Values Before Cleaning": df.isnull().sum().astype(int).to_dict()}
+
+    print(rows_before_cleaning)
+    print(duplicates_before_cleaning)
+    print(nullvalues_before_cleaning)
 
     # Apply the cleaning functions
     cleaned_df = remove_duplicates(df)
     print('Done removing duplicates')
 
-    cleaned_df = handle_null_values(cleaned_df)
-    print('Done handling null values')
-
     cleaned_df = clean_data(cleaned_df)
     print("Done cleaning data ...")
 
-    return cleaned_df
+    # Calculate the processing time
+    time2 = time.time()
+    cleaning_time = time2 - time1
+    cleaning_time_minutes = int(cleaning_time // 60)
+    cleaning_time_seconds = int(cleaning_time % 60)
+    cleaning_time_info =  f"Processing Time: {cleaning_time_minutes} minutes {cleaning_time_seconds} seconds"
+    print(cleaning_time_info)
+
+    # Evaluate metrics after cleaning
+    rows_after_cleaning = { "Number of Rows After Cleaning": len(cleaned_df)}
+    duplicates_after_cleaning = { "Number of Duplicates After Cleaning": int(cleaned_df.duplicated().sum())}
+    nullvalues_after_cleaning = { "Number of Null Values After Cleaning": cleaned_df.isnull().sum().astype(int).to_dict()}
+
+    print(rows_after_cleaning)
+    print(duplicates_after_cleaning)
+    print(nullvalues_after_cleaning)
+
+    return cleaned_df, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning

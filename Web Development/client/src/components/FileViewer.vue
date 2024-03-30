@@ -3,7 +3,7 @@ import { ref, inject } from 'vue';
 import axios from 'axios';
 import { useLoading } from 'vue-loading-overlay'
 
-const { uploadedFiles, removeFile, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = defineProps(['uploadedFiles', 'removeFile', 'rows_before_cleaning', 'duplicates_before_cleaning', 'nullvalues_before_cleaning', 'rows_after_cleaning', 'duplicates_after_cleaning', 'nullvalues_after_cleaning']);
+const { uploadedFiles, removeFile, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = defineProps(['uploadedFiles', 'removeFile', 'cleaning_time_info', 'rows_before_cleaning', 'duplicates_before_cleaning', 'nullvalues_before_cleaning', 'rows_after_cleaning', 'duplicates_after_cleaning', 'nullvalues_after_cleaning']);
 const indexToDelete = ref(null);
 const filenameToDelete = ref(null);
 
@@ -61,6 +61,25 @@ const CleanData = async () => {
             }, 3000)
             // console.log(response.data)
             setTimeout(() => {
+
+                // Handle response from the server
+                const { data_key, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = response.data;
+                console.log(data_key)
+                console.log(rows_before_cleaning);
+                console.log(duplicates_before_cleaning);
+                console.log(nullvalues_before_cleaning);
+                console.log(rows_after_cleaning);
+                console.log(duplicates_after_cleaning);
+                console.log(nullvalues_after_cleaning);
+
+                // Update the metrics on the webpage
+                document.getElementById('rows-before-cleaning').textContent = JSON.stringify(rows_before_cleaning);
+                document.getElementById('duplicates-before-cleaning').textContent = JSON.stringify(duplicates_before_cleaning);
+                document.getElementById('nullvalues-before-cleaning').textContent = JSON.stringify(nullvalues_before_cleaning);
+                document.getElementById('rows-after-cleaning').textContent = JSON.stringify(rows_after_cleaning);
+                document.getElementById('duplicates-after-cleaning').textContent = JSON.stringify(duplicates_after_cleaning);
+                document.getElementById('nullvalues-after-cleaning').textContent = JSON.stringify(nullvalues_after_cleaning);
+
                 // Create a Blob from the binary data
                 const blob = new Blob([response.data]);
 
@@ -79,13 +98,31 @@ const CleanData = async () => {
                 // Cleanup
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
+
+                aftercleaningmodal();
             }, 3000)
         }
     } catch (err) {
-        throw new Error('Data Analysis failed')
+        throw new Error('Data Cleaning failed')
         // console.error('Data Analysis failed:', error);
     }
 }
+
+// Define rundescriptivediagnostic function
+const aftercleaningmodal = async () => {
+
+// Display the modal once data analysis is done
+const modal = document.getElementById('cleaningModal');
+modal.style.display = "block";
+
+// Add event listener for the close button
+document.querySelector('.close').addEventListener('click', async function () {
+    // Hide the modal when the close button is clicked
+    modal.style.display = "none";
+    
+});
+};
+
 
 // Define DataAnalysis function separately
 const DataAnalysis = async () => {
@@ -307,6 +344,17 @@ const analysiswithdashboard = async () => {
             </div>
         </div>
 
+        <!-- Cleaning Done Pop Up -->
+        <div id="cleaningModal" class="modal-aftercleaning">
+            <div class="modal-content-aftercleaning">
+                <span class="close">&times;</span>
+                <h2>Data Cleaning Complete</h2>
+                <p>Your data cleaning has finished successfully.</p>
+                <p>Please check your downloads folder.</p>
+                <p>Cleaning Time</p>
+            </div>
+        </div>
+
         <!-- Analysis Done Pop Up -->
         <div id="analysisModal" class="modal-afteranalysis">
             <div class="modal-content-afteranalysis">
@@ -338,6 +386,27 @@ const analysiswithdashboard = async () => {
 .file-item {
     margin: 5px;
     border-bottom: 1px solid #ccc;
+}
+
+.modal-aftercleaning {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-aftercleaning {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
 }
 
 .modal-afteranalysis {

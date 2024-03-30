@@ -45,16 +45,26 @@ def clean_data():
     # Store the file data temporarily
     cleaned_data_storage[data_key] = file.read()
 
-    # Perform data cleaning
-    cleaned_data = full_data_clean(filename, file)
+    cleaned_df, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning = full_data_clean(filename, file)
     # print(cleaned_data.info())
     # print(cleaned_data['InvoiceDate'].unique())
     # print(cleaned_data['InvoiceDate'])
     # Store the cleaned data temporarily
-    cleaned_data_storage[data_key + '_cleaned'] = cleaned_data.to_json(orient='records')
+    cleaned_data_storage[data_key + '_cleaned'] = cleaned_df.to_json(orient='records')
 
     # Return the key for the client to retrieve the cleaned data
-    return jsonify({"data_key": data_key}), 200
+    return (
+        jsonify({
+            "data_key": data_key,
+            "cleaning_time_info": cleaning_time_info,
+            "rows_before_cleaning": rows_before_cleaning, 
+            "duplicates_before_cleaning": duplicates_before_cleaning, 
+            "nullvalues_before_cleaning": nullvalues_before_cleaning, 
+            "rows_after_cleaning": rows_after_cleaning, 
+            "duplicates_after_cleaning": duplicates_after_cleaning, 
+            "nullvalues_after_cleaning": nullvalues_after_cleaning
+        }), 200
+    )
 
 
 @app.route('/get_cleaned_data/<data_key>', methods=['GET'])
