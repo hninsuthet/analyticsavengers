@@ -65,7 +65,7 @@ def analyse_data_from_client():
         response = requests.post(f'{FLASK_2_URL}/analysedata', files={'file': (file.filename, file)})
     
         if response.status_code == 200:
-            # Cleaning done, now retrieve the cleaned data
+            # Analysis done, retrieve the analysed data
             data_key = response.json().get('data_key')
             session['id'] = data_key
             analysed_data_response = requests.get(f'{FLASK_2_URL}/get_analysed_data/{data_key}')
@@ -73,7 +73,6 @@ def analyse_data_from_client():
                 # Receive and process the cleaned data
                 analysed_data = analysed_data_response.json()
                 analysed_data_storage[data_key] = analysed_data
-                # print(analysed_data_storage)
                 return jsonify({"data_key": data_key}), 200
             else:
                 return "Failed to retrieve cleaned data from Flask 2", 500
@@ -83,19 +82,13 @@ def analyse_data_from_client():
 
 @app.route('/get_analysed_data/<data_key>', methods=['GET'])
 def get_analysed_data(data_key):
-    print(data_key)
-    print(analysed_data_storage)
-
     # Check if the data key exists
     if data_key in analysed_data_storage:
         # Retrieve the cleaned data from storage
         analysed_data_json = analysed_data_storage[data_key]
-        
-    #     # print(cleaned_data_json)
         return analysed_data_json, 200
     else:
         return jsonify({"error": "No analysed data available for the provided key"}), 404
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
