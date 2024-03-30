@@ -90,7 +90,7 @@ def analyse_data():
     # Store the file data temporarily
     analysed_data_storage[data_key] = file.read()
 
-    cleaned_data = full_data_clean(filename, file)
+    cleaned_data, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning = full_data_clean(filename, file)
     analysed_data = full_data_analysis(cleaned_data)
     # print(analysed_data) # output is in this format: 0\x10\x00\x08\x01
     # Store the analysed data temporarily
