@@ -3,7 +3,7 @@ import { ref, inject } from 'vue';
 import axios from 'axios';
 import { useLoading } from 'vue-loading-overlay'
 
-const { uploadedFiles, removeFile, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = defineProps(['uploadedFiles', 'removeFile', 'cleaning_time_info', 'rows_before_cleaning', 'duplicates_before_cleaning', 'nullvalues_before_cleaning', 'rows_after_cleaning', 'duplicates_after_cleaning', 'nullvalues_after_cleaning']);
+const { uploadedFiles, removeFile, data_key, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = defineProps(['uploadedFiles', 'removeFile', 'data_key', 'cleaning_time_info', 'rows_before_cleaning', 'duplicates_before_cleaning', 'nullvalues_before_cleaning', 'rows_after_cleaning', 'duplicates_after_cleaning', 'nullvalues_after_cleaning']);
 const indexToDelete = ref(null);
 const filenameToDelete = ref(null);
 
@@ -63,8 +63,10 @@ const CleanData = async () => {
             setTimeout(() => {
 
                 // Handle response from the server
-                const { data_key, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = response.data;
-                console.log(data_key)
+                const { data_key, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = response.data;
+                console.log(response.data);
+                console.log(data_key);
+                console.log(cleaning_time_info);
                 console.log(rows_before_cleaning);
                 console.log(duplicates_before_cleaning);
                 console.log(nullvalues_before_cleaning);
