@@ -10,7 +10,7 @@ DEBUG = True
 
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.secret_key = 'BAD_SECRET_KEY'
+app.secret_key = 'SECRET_KEY'
 
 CORS(app, resources={r'/*': {'origins': '*'}})
 ALLOWED_EXTENSIONS = set(['csv', 'xlsx', 'json'])

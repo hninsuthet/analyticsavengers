@@ -103,6 +103,7 @@ const DataAnalysis = async () => {
         });
         // console.log(formData)
         const response = await axios.post(`${FLASK1_URL}/dataanalysis`, formData, { headers });
+        sessionStorage.setItem('id', response.data.data_key);
 
         if (response.status == 200) {
             loader.hide()
@@ -136,8 +137,7 @@ const analysiswithdashboard = async () => {
         modal.style.display = "none";
 
         // Call the navigatetodashboard function after the modal is closed
-        // const loader = $loading.show({});
-        
+        const loader = $loading.show({});
         await navigatetodashboard();
     });
 };
@@ -182,7 +182,7 @@ const analysiswithdashboard = async () => {
                 <!-- Descriptive & Diagnostic Analysis button -->
                 <button type="button" class="btn btn-secondary" style="margin-bottom: 10px; margin-top: 10px;"
                     data-bs-toggle="modal" data-bs-target="#ddModal">
-                    <span class="align-middle">Descriptive & Diagnostic</span>
+                    <span class="align-middle">Data Analysis</span>
                 </button>
             </div>
         </div>
@@ -202,7 +202,7 @@ const analysiswithdashboard = async () => {
                 <!-- Descriptive & Diagnostic Analysis button -->
                 <button type="button" class="btn btn-secondary" style="margin-bottom: 10px; margin-top: 10px;"
                     data-bs-toggle="modal" data-bs-target="#ddModal">
-                    <span class="align-middle">Descriptive & Diagnostic</span>
+                    <span class="align-middle">Data Analysis</span>
                 </button>
 
             </div>
@@ -276,7 +276,7 @@ const analysiswithdashboard = async () => {
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-light border-light-subtle" data-bs-dismiss="modal"
-                            @click="CleanData()">Ok</button>
+                            @click="CleanData()">Start Cleaning</button>
                     </div>
                 </div>
             </div>
@@ -297,11 +297,11 @@ const analysiswithdashboard = async () => {
                                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                         </svg>
                         <br><br>
-                        <h4>Analysis Option: Descriptive & Diagnostic Selected </h4>
+                        <h4>Analysis Option: Data Analysis Selected </h4>
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-light border-light-subtle" data-bs-dismiss="modal"
-                            @click="DataAnalysis()">Ok</button>
+                            @click="DataAnalysis()">Start Analysis</button>
                     </div>
                 </div>
             </div>
@@ -311,7 +311,7 @@ const analysiswithdashboard = async () => {
         <div id="analysisModal" class="modal-afteranalysis">
             <div class="modal-content-afteranalysis">
                 <span class="close">&times;</span>
-                <h2>Data Analysis Complete</h2>
+                <h2>Data Analysis Completed</h2>
                 <p>Your data analysis has finished successfully.</p>
             </div>
         </div>
