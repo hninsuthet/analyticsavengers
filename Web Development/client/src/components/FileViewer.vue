@@ -113,16 +113,16 @@ const CleanData = async () => {
 // Define rundescriptivediagnostic function
 const aftercleaningmodal = async () => {
 
-// Display the modal once data analysis is done
-const modal = document.getElementById('cleaningModal');
-modal.style.display = "block";
+    // Display the modal once data analysis is done
+    const modal = document.getElementById('cleaningModal');
+    modal.style.display = "block";
 
-// Add event listener for the close button
-document.querySelector('.close').addEventListener('click', async function () {
-    // Hide the modal when the close button is clicked
-    modal.style.display = "none";
-    
-});
+    // Add event listener for the close button
+    document.querySelector('.close-aftercleaning').addEventListener('click', async function () {
+        // Hide the modal when the close button is clicked
+        modal.style.display = "none";
+        
+    });
 };
 
 
@@ -171,11 +171,11 @@ const analysiswithdashboard = async () => {
     modal.style.display = "block";
 
     // Add event listener for the close button
-    document.querySelector('.close').addEventListener('click', async function () {
+    document.querySelector('.close-afteranalysis').addEventListener('click', async function () {
         // Hide the modal when the close button is clicked
         modal.style.display = "none";
 
-        // Call the navigatetodashboard function after the modal is closed
+        // Call the navigatetodashboard function after the loader is closed
         const loader = $loading.show({});
         await navigatetodashboard();
     });
@@ -349,7 +349,7 @@ const analysiswithdashboard = async () => {
         <!-- Cleaning Done Pop Up -->
         <div id="cleaningModal" class="modal-aftercleaning">
             <div class="modal-content-aftercleaning">
-                <span class="close">&times;</span>
+                <span class="close-aftercleaning">&times;</span>
                 <h2>Data Cleaning Complete</h2>
                 <p>Your data cleaning has finished successfully.</p>
                 <p>Please check your downloads folder.</p>
@@ -360,7 +360,7 @@ const analysiswithdashboard = async () => {
         <!-- Analysis Done Pop Up -->
         <div id="analysisModal" class="modal-afteranalysis">
             <div class="modal-content-afteranalysis">
-                <span class="close">&times;</span>
+                <span class="close-afteranalysis">&times;</span>
                 <h2>Data Analysis Completed</h2>
                 <p>Your data analysis has finished successfully.</p>
             </div>
@@ -432,15 +432,29 @@ const analysiswithdashboard = async () => {
     max-width: 600px;
 }
 
-.close {
+.close-aftercleaning {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close-aftercleaning:hover,
+.close-aftercleaning:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-afteranalysis {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-afteranalysis:hover,
+.close-afteranalysis:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
