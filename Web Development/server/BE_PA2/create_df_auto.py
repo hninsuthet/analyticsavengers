@@ -1,5 +1,5 @@
 import pandas as pd
-from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 import difflib
 
 # ## Function that creates a dataframe for summary stats

@@ -17,6 +17,10 @@ from create_df_auto import get_clv_df
 def get_clv_tiers(df):
 
     df = get_clv_df(df)
+
+    # Test 
+    print(df)
+
     # STEP 1: Data Preprocessing - RFM Analysis and Data Splitting
     df = df[(df['Quantity'] > 0) & (df['UnitPrice'] > 0)]
 
