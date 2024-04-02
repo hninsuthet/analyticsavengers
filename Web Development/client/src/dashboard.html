@@ -622,6 +622,9 @@
 					plot_clv_tiers(clv_tier);
 					plot_clv_tiers_monthly_sales(monthly_clv)
 					plot_customer_profiling(customer_profiling)
+          // filter_row_platinum(customer_profiling)
+          // list_country(customer_profiling)
+          // best_selling_products(customer_profiling)
 				})
 				.catch(error => {
 					console.error('Error fetching data:', error);
@@ -1692,10 +1695,154 @@
 				}
 			}
 
-			//Fourth Row of Dashboard with the Customer Profiling
-			// Automatically show the first dropdown (Platinum) contents
+			// //Fourth Row of Dashboard with the Customer Profiling
+			// // Automatically show the first dropdown (Platinum) contents
+      // document.addEventListener("DOMContentLoaded", function() {
+      //     document.getElementById("platinum-dropdown").click();
+      // });
+
+      // const sub_tiers = ["Platinum", "Gold", "Silver", "Iron", "Lead"]
+      // for (let i = 0; i < sub_tiers.length; i++){
+      //    //Customers
+      // // Load the CSV data
+      // function filter_row_platinum(data){
+      //   // Filter the row for the Platinum sub-tier
 
 
+      //   const platinumData = data.find(row => row.Sub_Tier === sub_tiers[i]);
+          
+      //     // Prepare the gender data
+      //     const genderData = [
+      //         {"gender": "Female", "proportion": parseFloat(platinumData.Female_Proportion)},
+      //         {"gender": "Male", "proportion": parseFloat(platinumData.Male_Proportion)}
+      //     ];
+
+          
+      //     // Create the gender pie chart 
+      //     const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-gender-chart").append("svg")
+      //         .attr("width", 400) // Adjust as needed
+      //         .attr("height", 400); // Adjust as needed
+
+      //     const radius = Math.min(400, 400) / 2;
+      //     const g = svg.append("g").attr("transform", "translate(" + 400 / 2 + "," + 400 / 2 + ")");
+          
+      //     const color = d3.scaleOrdinal(["#4169e1", "#ff4500"]);
+          
+      //     const pie = d3.pie().value(d => d.proportion);
+      //     const path = d3.arc().outerRadius(radius).innerRadius(0);
+          
+      //     const arc = g.selectAll(".arc")
+      //         .data(pie(genderData))
+      //         .enter().append("g").attr("class", "arc");
+          
+      //     arc.append("path").attr("d", path)
+      //         .attr("fill", d => color(d.data.gender));
+
+      //     // Add labels, tooltips, etc. as needed
+      // }
+
+      // };
+
+      // function list_country(data){
+      //   const countriesString = data[i].Proportion_of_Countries.slice(1, -1);
+      //   const countries = countriesString.split(','); // Assuming countries are comma-separated
+
+      //   // Select the container and bind the countries data to create list items
+      //   d3.select('#' + sub_tiers[i].toLowerCase() + '-countries-chart')
+      //   .append('ol') // Changed from .selectAll('li') as we now need to append an 'ol' element
+      //   .selectAll('li')
+      //   .data(countries)
+      //   .enter()
+      //   .append('li')
+      //   .text(d => d.trim()) // Trim to remove any extra spaces around country names
+      //   .style('font-size', '20px') // Styling can still be applied as before
+      //   .style('font-family', 'Roboto, sans-serif') // Apply any font-family
+      //   .style('margin-bottom', '5px')
+      //   .style('background-color', '#FAF9F6')
+      //   .style('border-left', '5px solid #3498db')
+      //   .style('padding', '5px 10px')
+      //   .style('box-shadow', '2px 2px 5px rgba(0,0,0,0.1)')
+      //   .style('transition', 'transform 0.2s'); // For hover effect
+
+      //   // Adding hover effect to scale items
+      //   d3.selectAll('#countries ol li').on('mouseover', function() {
+      //       d3.select(this)
+      //         .transition()
+      //         .duration(200)
+      //         .style('transform', 'scale(1.05)');
+      //   }).on('mouseout', function() {
+      //       d3.select(this)
+      //         .transition()
+      //         .duration(200)
+      //         .style('transform', 'scale(1)');
+      //   });
+      // }
+
+      // //Best Selling Products
+      // function best_selling_products(data){
+      //   function createBarChart(data) {
+      //         const margin = {top: 30, right: 30, bottom: 70, left: 60},
+      //               width = 460 - margin.left - margin.right,
+      //               height = 400 - margin.top - margin.bottom;
+
+      //         // Append the svg object to the body
+      //         const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-bestsellingproducts")
+      //           .append("svg")
+      //             .attr("width", width + margin.left + margin.right)
+      //             .attr("height", height + margin.top + margin.bottom)
+      //           .append("g")
+      //             .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      //         // X axis
+      //         const x = d3.scaleBand()
+      //           .range([ 0, width ])
+      //           .domain(data.map(d => d.product))
+      //           .padding(0.2);
+      //         svg.append("g")
+      //           .attr("transform", `translate(0,${height})`)
+      //           .call(d3.axisBottom(x))
+      //           .selectAll("text")
+      //             .attr("transform", "translate(-10,0)rotate(-15)")
+      //             .style("text-anchor", "end");
+
+      //         // Add Y axis
+      //         const y = d3.scaleLinear()
+      //           .domain([0, d3.max(data, d => d.sales)])
+      //           .range([ height, 0]);
+      //         svg.append("g")
+      //           .call(d3.axisLeft(y));
+
+      //         // Bars
+      //         svg.selectAll("mybar")
+      //           .data(data)
+      //           .join("rect")
+      //             .attr("x", d => x(d.product))
+      //             .attr("y", d => y(d.sales))
+      //             .attr("width", x.bandwidth())
+      //             .attr("height", d => height - y(d.sales))
+      //             .attr("fill", "#69b3a2");
+
+      //         // Optionally, add interactivity, labels, etc.
+      //     }
+
+      //     // Assuming the "Best_Selling_Products" column contains JSON-like strings
+      //     // Parse the first row's "Best_Selling_Products" data
+      //     for (let y = 0; y < data.length; y++){
+      //       if (data[y].Sub_Tier == sub_tiers[i]){
+      //         var test = data[y].Best_Selling_Products.replace(/"/g, '')
+      //         var bestSellingProducts = JSON.parse(test.replace(/'/g, '"'));
+              
+      //       }
+      //     }
+
+      //     // Convert the object into an array of objects each containing 'product' and 'sales'
+      //     var productsData = Object.keys(bestSellingProducts).map(function(key) {
+      //         return { product: key, sales: bestSellingProducts[key] };
+      //     });
+
+      //     // Now, productsData is ready for use in creating the bar chart
+      //     createBarChart(productsData);
+      // }
 		};
 	</script>
 
