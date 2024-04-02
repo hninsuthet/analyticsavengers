@@ -84,9 +84,9 @@ def handle_null_values(df):
     return clean_df
 
 # TextBlob Spelling Correction Function
-def correct_spelling(text):
-    blob = TextBlob(text)
-    return str(blob.correct())
+# def correct_spelling(text):
+#     blob = TextBlob(text)
+#     return str(blob.correct())
 
 # Standardization Function for text - Capitalize first letter of every word
 def standardize_text(text):
@@ -149,6 +149,9 @@ def full_data_clean(filename, file): # remove argument: output_excel
     cleaned_df = remove_duplicates(df)
     print('Done removing duplicates')
 
+    cleaned_df = handle_null_values(cleaned_df)
+    print('Done handling null values')
+    
     cleaned_df = clean_data(cleaned_df)
     print("Done cleaning data ...")
 
@@ -169,4 +172,5 @@ def full_data_clean(filename, file): # remove argument: output_excel
     print(duplicates_after_cleaning)
     print(nullvalues_after_cleaning)
 
-    return cleaned_df, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning
+    # return cleaned_df, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning
+    return cleaned_df
