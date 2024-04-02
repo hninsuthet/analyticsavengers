@@ -11,7 +11,7 @@ from lifetimes.utils import calibration_and_holdout_data
 from lifetimes.utils import summary_data_from_transaction_data
 from lifetimes.plotting import plot_calibration_purchases_vs_holdout_purchases
 
-from create_df_statsclvrfm import get_clv_df
+from create_df_auto import get_clv_df
 
 # Automation for metrics
 def generate_metrics_auto(df):
@@ -28,6 +28,9 @@ def generate_metrics_auto(df):
                                             customer_id_col = 'CustomerID', 
                                             datetime_col = 'InvoiceDate', 
                                             monetary_value_col = 'Monetary')
+    
+    # Convert 'InvoiceDate' column to datetime
+    df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     
     # get time period of entire dataset
     # print(df.info())

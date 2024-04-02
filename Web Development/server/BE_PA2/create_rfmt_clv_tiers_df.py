@@ -4,17 +4,16 @@ import datetime as dt
 import math
 
 # BG/NBD and Gamma-Gamma model from lifetimes package
-from sklearn.cluster import KMeans
 from sklearn.metrics import mean_squared_error
 from lifetimes import BetaGeoFitter
 from lifetimes import GammaGammaFitter
 from lifetimes.utils import calibration_and_holdout_data
 from lifetimes.utils import summary_data_from_transaction_data
 
-from create_df_statsclvrfm import get_clv_df
+from create_df_auto import get_clv_df
 
 #getting the clv df to put into chia wen's function she created to output the tiers
-#getting the dataframe with the tiers (high, medium low)
+#getting the dataframe with the tiers (high, middle low)
 def get_clv_tiers(df):
 
     df = get_clv_df(df)
@@ -27,6 +26,9 @@ def get_clv_tiers(df):
                                             customer_id_col = 'CustomerID', 
                                             datetime_col = 'InvoiceDate', 
                                             monetary_value_col = 'Monetary')
+    
+    # Convert 'InvoiceDate' column to datetime
+    df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     
     # get time period of entire dataset
     diff_time = df['InvoiceDate'].max() - df['InvoiceDate'].min()
@@ -115,10 +117,10 @@ def get_clv_tiers(df):
     total_customers = len(df_rfmt)
     high_value_count = int(total_customers * 0.2)
     low_value_count = int(total_customers * 0.2)
-    # medium_value_count = total_customers - high_value_count - low_value_count
+    # middle_value_count = total_customers - high_value_count - low_value_count
 
     # Assign tiers based on CLV
-    df_rfmt['Tier'] = 'Medium Tier CLV'  # Initialize all as medium value
+    df_rfmt['Tier'] = 'Middle Tier CLV'  # Initialize all as middle value
 
     # Assign high value tier
     df_rfmt.iloc[:high_value_count, df_rfmt.columns.get_loc('Tier')] = 'High Tier CLV'
@@ -126,7 +128,7 @@ def get_clv_tiers(df):
     # Assign low value tier
     df_rfmt.iloc[-low_value_count:, df_rfmt.columns.get_loc('Tier')] = 'Low Tier CLV'
 
-    # Reset index "CustomerID" and move it to column,
+    # Reset index "CustomerID" and move it to column
     df_rfmt.reset_index(inplace=True)
 
     return df_rfmt

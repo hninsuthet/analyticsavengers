@@ -10,7 +10,7 @@ from lifetimes import GammaGammaFitter
 from lifetimes.utils import calibration_and_holdout_data
 from lifetimes.utils import summary_data_from_transaction_data
 
-from create_df_statsclvrfm import get_clv_df
+from create_df_auto import get_clv_df
 
 def clv_tiers_auto(df):
 
@@ -26,6 +26,9 @@ def clv_tiers_auto(df):
                                             customer_id_col = 'CustomerID', 
                                             datetime_col = 'InvoiceDate', 
                                             monetary_value_col = 'Monetary')
+    
+    # Convert 'InvoiceDate' column to datetime
+    df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     
     # get time period of entire dataset
     diff_time = df['InvoiceDate'].max() - df['InvoiceDate'].min()

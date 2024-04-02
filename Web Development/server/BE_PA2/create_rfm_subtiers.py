@@ -3,15 +3,7 @@ import numpy as np
 import datetime as dt
 import math
 
-# BG/NBD and Gamma-Gamma model from lifetimes package
-from sklearn.cluster import KMeans
-from sklearn.metrics import mean_squared_error
-from lifetimes import BetaGeoFitter
-from lifetimes import GammaGammaFitter
-from lifetimes.utils import calibration_and_holdout_data
-from lifetimes.utils import summary_data_from_transaction_data
-
-from create_clv_tiers_df import get_clv_tiers
+from create_rfmt_clv_tiers_df import get_clv_tiers
 import pandas as pd
 
 def calculate_sub_tiers(df):
@@ -26,46 +18,53 @@ def calculate_sub_tiers(df):
     df_rfm['F_norm'] = (df_rfm['frequency'] - df_rfm['frequency'].min()) / (df_rfm['frequency'].max() - df_rfm['frequency'].min())
     df_rfm['M_norm'] = (df_rfm['monetary_value'] - df_rfm['monetary_value'].min()) / (df_rfm['monetary_value'].max() - df_rfm['monetary_value'].min())
 
-    # Calculate weighted RFM score
-    df_rfm['RFM_Score'] = 1 * df_rfm['R_norm'] + 3 * df_rfm['F_norm'] + 3 * df_rfm['M_norm']
+    # Calculate thresholds
+    high_threshold = 0.7  # Represents the top 30 percentile
+    low_threshold = 0.3  # Represents the bottom 30 percentile
+    # Middle percentile range is implicitly from 0.3 to 0.7
 
-    # Drop the normalized columns
-    df_rfm = df_rfm.drop(['R_norm', 'F_norm', 'M_norm'], axis=1)
+    def calculate_percentile(column, high_threshold, low_threshold):
+        """
+        Calculate high, middle, and low thresholds for a given RFM component
+        """
+        high_val = column.quantile(high_threshold)
+        low_val = column.quantile(low_threshold)
+        return high_val, low_val
 
-    # Calculate the quantiles within each CLV tier group.
-    quantiles = df_rfm.groupby('Tier')['RFM_Score'].quantile([0.4, 0.6, 0.8]).unstack()
+    # Calculate thresholds for R, F, M components
+    r_high, r_low = calculate_percentile(df_rfm['R_norm'], high_threshold, low_threshold)
+    f_high, f_low = calculate_percentile(df_rfm['F_norm'], high_threshold, low_threshold)
+    m_high, m_low = calculate_percentile(df_rfm['M_norm'], high_threshold, low_threshold)
 
-    def assign_tier(row):
-        clv_tier = row['Tier']
-        rfm_score = row['RFM_Score']
-        # High CLV Tier
-        if clv_tier == 'High Tier CLV':
-            if rfm_score <= quantiles.loc[clv_tier, 0.4]:
-                return 'Silver'
-            elif rfm_score <= quantiles.loc[clv_tier, 0.8]:
-                return 'Gold'
-            else:
-                return 'Platinum'
-        # Medium CLV Tier
-        elif clv_tier == 'Medium Tier CLV':
-            if rfm_score <= quantiles.loc[clv_tier, 0.6]:
-                return 'Copper'
-            else:
+
+    def assign_subtier(row):
+        r, f, m = row['R_norm'], row['F_norm'], row['M_norm']
+        tier = row['Tier']
+
+        if tier == 'High Tier CLV':
+            if f >= f_high and m >= m_high and r >= r_high:
+                return 'High-Value'
+            elif f >= f_high and m != m_high and r != r_high:
+                return 'Loyal'
+            #elif r >= r_high and f <= f_low:
+                #return 'New'
+            elif f <= f_low and m >= m_high and r != r_high:
+                return 'At-Risk'
+        elif tier == 'Middle Tier CLV':
+            if f != f_low or m >= m_high:  # Assuming "higher" for Middle CLV tier
                 return 'Bronze'
-        # Low CLV Tier
-        elif clv_tier == 'Low Tier CLV':
-            if rfm_score <= quantiles.loc[clv_tier, 0.6]:
-                return 'Lead'
             else:
+                return 'Copper'
+        elif tier == 'Low Tier CLV':
+            if f != f_low or m >= m_high:  # Assuming "higher" for Low CLV tier
                 return 'Iron'
-        # Default case if none above
+            else:
+                return 'Lead'
         return 'Unassigned'
 
-    # Create new df for RFM tiering
-    df_subtiers = df_rfm[['CustomerID', 'recency', 'frequency', 'monetary_value', 'RFM_Score', 'Tier']].copy()
-
-    # Apply the function to each row to assign the tier
-    df_subtiers['Sub_Tier'] = df_subtiers.apply(assign_tier, axis=1)
+    # Apply the subtier assignment function
+    df_subtiers = df_rfm.copy()
+    df_subtiers['Sub_Tier'] = df_subtiers.apply(assign_subtier, axis=1)
+    df_subtiers = df_subtiers.drop(columns=['recency', 'frequency', 'monetary_value', 'R_norm', 'F_norm', 'M_norm'])
     
     return df_subtiers
-

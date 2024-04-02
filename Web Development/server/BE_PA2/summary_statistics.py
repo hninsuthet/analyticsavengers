@@ -1,6 +1,6 @@
 import pandas as pd
 
-from create_df_statsclvrfm import get_stats_df
+from create_df_auto import get_stats_df
 
 def generate_sales_trends(df):
 
