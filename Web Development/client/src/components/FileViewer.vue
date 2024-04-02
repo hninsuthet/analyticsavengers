@@ -96,7 +96,7 @@ const CleanData = async () => {
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
 
-                // aftercleaningmodal();
+                aftercleaningmodal();
             }, 3000)
         }
     } catch (err) {
