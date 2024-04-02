@@ -48,39 +48,34 @@ const CleanData = async () => {
 
         // Append each file to the FormData object
         uploadedFiles.forEach(file => {
-            console.log(file);
             formData.append('file', file);
         });
-        console.log(formData)
+
         const response = await axios.post(`${FLASK1_URL}/cleandata`, formData, { headers });
-
         if (response.status == 200) {
-
             setTimeout(() => {
                 loader.hide()
             }, 3000)
-            // console.log(response.data)
             setTimeout(() => {
-
                 // Handle response from the server
-                const { data_key, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = response.data;
-                console.log(response.data);
-                console.log(data_key);
-                console.log(cleaning_time_info);
-                console.log(rows_before_cleaning);
-                console.log(duplicates_before_cleaning);
-                console.log(nullvalues_before_cleaning);
-                console.log(rows_after_cleaning);
-                console.log(duplicates_after_cleaning);
-                console.log(nullvalues_after_cleaning);
+                // const { data_key, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning } = response.data;
+                // console.log(response.data);
+                // console.log(data_key);
+                // console.log(cleaning_time_info);
+                // console.log(rows_before_cleaning);
+                // console.log(duplicates_before_cleaning);
+                // console.log(nullvalues_before_cleaning);
+                // console.log(rows_after_cleaning);
+                // console.log(duplicates_after_cleaning);
+                // console.log(nullvalues_after_cleaning);
 
-                // Update the metrics on the webpage
-                document.getElementById('rows-before-cleaning').textContent = JSON.stringify(rows_before_cleaning);
-                document.getElementById('duplicates-before-cleaning').textContent = JSON.stringify(duplicates_before_cleaning);
-                document.getElementById('nullvalues-before-cleaning').textContent = JSON.stringify(nullvalues_before_cleaning);
-                document.getElementById('rows-after-cleaning').textContent = JSON.stringify(rows_after_cleaning);
-                document.getElementById('duplicates-after-cleaning').textContent = JSON.stringify(duplicates_after_cleaning);
-                document.getElementById('nullvalues-after-cleaning').textContent = JSON.stringify(nullvalues_after_cleaning);
+                // // Update the metrics on the webpage
+                // document.getElementById('rows-before-cleaning').textContent = JSON.stringify(rows_before_cleaning);
+                // document.getElementById('duplicates-before-cleaning').textContent = JSON.stringify(duplicates_before_cleaning);
+                // document.getElementById('nullvalues-before-cleaning').textContent = JSON.stringify(nullvalues_before_cleaning);
+                // document.getElementById('rows-after-cleaning').textContent = JSON.stringify(rows_after_cleaning);
+                // document.getElementById('duplicates-after-cleaning').textContent = JSON.stringify(duplicates_after_cleaning);
+                // document.getElementById('nullvalues-after-cleaning').textContent = JSON.stringify(nullvalues_after_cleaning);
 
                 // Create a Blob from the binary data
                 const blob = new Blob([response.data]);
@@ -101,7 +96,7 @@ const CleanData = async () => {
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
 
-                aftercleaningmodal();
+                // aftercleaningmodal();
             }, 3000)
         }
     } catch (err) {
@@ -140,6 +135,11 @@ const DataAnalysis = async () => {
             console.log(file);
             formData.append('file', file);
         });
+
+        const sessionId = "001" // current storing a default value
+        sessionStorage.setItem("sessionId", sessionId);
+        formData.append('sessionId', sessionId);
+
         // console.log(formData)
         const response = await axios.post(`${FLASK1_URL}/dataanalysis`, formData, { headers });
         sessionStorage.setItem('id', response.data.data_key);
