@@ -21,9 +21,10 @@ def full_data_analysis(cleaned_data):
 
     # call get_monthly_clv() from clv_months.py
     monthly_clv_df = get_monthly_clv(cleaned_data)
+    print(monthly_clv_df.info())
     print('Done monthly_clv_df')
 
-    # call get_monthly_clv() from clv_months.py
+    # call create_customer_profiling from clv_months.py
     customer_profiling_df = create_customer_profiling(cleaned_data)
     print('Done customer_profiling_df')
 
@@ -31,7 +32,8 @@ def full_data_analysis(cleaned_data):
     metrics_json = metrics.to_json(orient='records')
     clv_tier_json = clv_tier.to_json(orient='records')
     # monthly_sales_json = monthly_sales.to_json(orient='records')
-    monthly_clv_df_json = monthly_clv_df.to_json(orient='records')
+    monthly_clv_df_json = monthly_clv_df.to_json(orient='records', default_handler=str)
+    # monthly_clv_df_json = monthly_clv_df.to_json(orient='records')
     customer_profiling_df_json = customer_profiling_df.to_json(orient='records')
 
     # Create a dictionary to hold all JSON data

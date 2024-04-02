@@ -15,7 +15,8 @@ def get_monthly_clv(df):
      extracted_df['Sales'] = extracted_df['Quantity'] * extracted_df['UnitPrice']
 
     # # Convert 'InvoiceDate' to '%Y-%m' format, eg. '2010-12'
-     extracted_df['Month'] = pd.to_datetime(extracted_df['InvoiceDate'], format='%Y-%m-%d').dt.to_period('M')
+     # Convert 'InvoiceDate' to '%Y-%m' format, eg. '2010-12-01'
+     extracted_df['Month'] = pd.to_datetime(extracted_df['InvoiceDate']).dt.to_period('M')
 
     # Get CLV Tiers DataFrame
      clv_df = get_clv_tiers(df)

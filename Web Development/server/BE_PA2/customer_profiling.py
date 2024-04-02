@@ -32,8 +32,8 @@ def create_customer_profiling(df):
     
     for x in df_subtier_unique.Sub_Tier.unique():
         df_tier = df_subtier_unique[df_subtier_unique['Sub_Tier'] == x]
-        print("Top country of " + str(x) + " sub tier: " + str(df_tier['Country'].mode()[0]))
-        print("Gender distribution of " + str(x) + " sub tier: F - " + str(round((df_tier['Gender'].value_counts()['F']/df_tier.shape[0])*100)) + "% M - " + str(round((df_tier['Gender'].value_counts()['M']/df_tier.shape[0])*100)) + "% \n")
+        # print("Top country of " + str(x) + " sub tier: " + str(df_tier['Country'].mode()[0]))
+        # print("Gender distribution of " + str(x) + " sub tier: F - " + str(round((df_tier['Gender'].value_counts()['F']/df_tier.shape[0])*100)) + "% M - " + str(round((df_tier['Gender'].value_counts()['M']/df_tier.shape[0])*100)) + "% \n")
 
     for index, x in enumerate(df_subtier_unique.Sub_Tier.unique()):
         df_tier = df_subtier_unique[df_subtier_unique['Sub_Tier'] == x]
@@ -52,10 +52,10 @@ def create_customer_profiling(df):
     df_subtier["OrderCount"] = 1
 
     for x in df_subtier.Sub_Tier.unique():
-        print("\033[1m" + str(x) + " sub tier best selling categories" + "\033[0;0m")
+        # print("\033[1m" + str(x) + " sub tier best selling categories" + "\033[0;0m")
         df_tier = df_subtier[df_subtier['Sub_Tier'] == x]
-        print(df_tier.groupby("Category").sum(numeric_only=True, min_count=0).nlargest(5, 'Quantity').drop(columns=['CustomerID', 'UnitPrice', 'OrderValue', 'OrderCount']))
-        print("\n")
+        # print(df_tier.groupby("Category").sum(numeric_only=True, min_count=0).nlargest(5, 'Quantity').drop(columns=['CustomerID', 'UnitPrice', 'OrderValue', 'OrderCount']))
+        # print("\n")
 
     for index, x in enumerate(df_subtier.Sub_Tier.unique()):
         category_dict = {}
@@ -67,10 +67,10 @@ def create_customer_profiling(df):
         df_final.loc[index, "Best_Selling_Categories"] = str(category_dict)
 
     for x in df_subtier.Sub_Tier.unique():
-        print("\033[1m" + str(x) + " sub tier best selling products" + "\033[0;0m")
+        # print("\033[1m" + str(x) + " sub tier best selling products" + "\033[0;0m")
         df_tier = df_subtier[df_subtier['Sub_Tier'] == x]
-        print(df_tier.groupby("Description").sum(numeric_only=True, min_count=0).nlargest(5, 'Quantity').drop(columns=['CustomerID', 'UnitPrice', 'OrderValue', 'OrderCount']))
-        print("\n")
+        # print(df_tier.groupby("Description").sum(numeric_only=True, min_count=0).nlargest(5, 'Quantity').drop(columns=['CustomerID', 'UnitPrice', 'OrderValue', 'OrderCount']))
+        # print("\n")
 
     for index, x in enumerate(df_subtier.Sub_Tier.unique()):
         description_dict = {}
@@ -85,8 +85,8 @@ def create_customer_profiling(df):
         ordervalue = df_subtier[df_subtier['Sub_Tier'] == x].sum(numeric_only=True, min_count=0)["OrderValue"]
         ordercount = df_subtier[df_subtier['Sub_Tier'] == x].sum(numeric_only=True, min_count=0)["OrderCount"]
         qty = df_subtier[df_subtier['Sub_Tier'] == x].sum(numeric_only=True, min_count=0)["Quantity"]
-        print(str(x) + " sub tier AVG order amount: $" + str(round((ordervalue/ordercount), 2)))
-        print(str(x) + " sub tier AVG order size: " + str(math.floor(qty/ordercount)) + "\n")
+        # print(str(x) + " sub tier AVG order amount: $" + str(round((ordervalue/ordercount), 2)))
+        # print(str(x) + " sub tier AVG order size: " + str(math.floor(qty/ordercount)) + "\n")
 
     for index, x in enumerate(df_subtier.Sub_Tier.unique()):
         ordervalue = df_subtier[df_subtier['Sub_Tier'] == x].sum(numeric_only=True, min_count=0)["OrderValue"]
