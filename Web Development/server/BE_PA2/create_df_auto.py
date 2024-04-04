@@ -65,7 +65,12 @@ def get_clv_df(df):
 
     # Create a new DataFrame with only the required columns
     clv_df = df[clv_columns].copy()
-    
+
+    # Check if 'InvoiceDate' column is datetime type and convert if not
+    if not pd.api.types.is_datetime64_any_dtype(clv_df['InvoiceDate']):
+        clv_df['InvoiceDate'] = pd.to_datetime(clv_df['InvoiceDate'])
+
+
     return clv_df
 
 # ## Function that creates a dataframe for rfm
