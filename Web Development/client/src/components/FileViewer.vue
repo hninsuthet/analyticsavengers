@@ -355,7 +355,6 @@ const analysiswithdashboard = async () => {
                 <h2>Data Cleaning Complete</h2>
                 <p>Your data cleaning has finished successfully.</p>
                 <p>Please check your downloads folder.</p>
-                <p>Cleaning Time</p>
             </div>
         </div>
 
