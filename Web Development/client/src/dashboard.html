@@ -265,7 +265,8 @@
 					<!--Start of Suggested Strategies-->  
 					<div class="col-md-12">
 						<h3>Suggested Strategy</h3>
-					</div>
+						<p id="strategy_details">Strategy Details:</p>
+					  </div>
 				
 					<div class="col-md-12">
 						<div class="container-box">
@@ -1122,6 +1123,7 @@
 				updateBestSellingProducts(subTier, data);
 				updateGenderDistribution(subTier, data);
 				updateCountries(subTier, data);
+				updateSubtierStrategyExplanation(subTier, data);
 				updateStrategy(subTier, data, high, risk, loyal);
 			}
 			
@@ -1179,6 +1181,9 @@
 				//Calculate and display Countries for the default subtier
 				updateCountries(defaultSubTier,data)
 
+				//display subtier strategy explanation for the default subtier
+				updateSubtierStrategyExplanation(defaultSubTier,data)
+
 				// Set event listeners for dropdown menu items
 				var dropdownItems = document.querySelectorAll(".dropdown-item");
 				dropdownItems.forEach(item => {
@@ -1200,6 +1205,27 @@
 				} else {
 					// Display a message indicating that data for the specified sub-tier was not found
 					document.getElementById("subTierDetails").innerText = "Data not found for sub-tier: " + subTier;
+				}
+			}
+
+			// Define strategy explanations
+			const strategyExplanations = {
+				"High-Value": "Tailored to your most valuable customers, this strategy provides personalised recommendations for premium products that align with their preferences. By implementing this upselling strategy, you can boost customer engagement levels and foster repeat purchases of high-value items.",
+				"Loyal": "This strategy focuses on nurturing customer loyalty through a targeted cross-selling approach. By leveraging recommender systems based on past purchase behavior, you can introduce your loyal customers to complementary products that enhance their overall experience and deepen their brand affinity.",
+				"At-Risk": "Designed to re-engage your customers who may be at a high risk of churn, this strategy offers them exclusive discounts tailored to their purchase history. By providing discount tiers within specific product categories based on how often your customers make purchases, you encourage them to keep coming back to your brand."
+			};
+
+			// Function to update strategy explanation for a given sub-tier
+			function updateSubtierStrategyExplanation(subTier, data) {
+				// Get strategy explanation based on the selected sub-tier
+				var explanation = strategyExplanations[subTier];
+
+				if (explanation) {
+					// Display strategy explanation
+					document.getElementById("strategy_details").innerText = explanation;
+				} else {
+					// Display a message indicating that explanation for the specified sub-tier was not found
+					document.getElementById("strategy_details").innerText = "Explanation not found for sub-tier: " + subTier;
 				}
 			}
 
@@ -1486,7 +1512,6 @@
 				}
 			}
 
-
 			function displayStrategyData(data, subTier) {
 				let newHeadings = {};
 				
@@ -1541,34 +1566,6 @@
 				// Insert the HTML into the strategy table
 				document.querySelector(".strategy-table").innerHTML = strategyHtml;
 			}
-
-			// // Object mapping subTiers to strategy descriptions
-			// const strategyDescriptions = {
-			// 	"High-Value": "High Value Strategy: This initiative is tailored to our most valuable customers, providing them with personalized recommendations for premium products that align with their preferences. By catering to their discerning tastes, we aim to boost their engagement and encourage additional purchases of high-value items, effectively implementing an up-selling strategy.",
-
-			// 	"Loyal": "Loyal Strategy: With our Loyal Strategy, we focus on nurturing customer loyalty through a targeted cross-selling approach. By leveraging sophisticated recommender systems based on past purchase behavior, we introduce loyal customers to complementary products that enhance their overall experience and deepen their relationship with our brand.",
-
-			// 	"At-Risk": "At-Risk Strategy: Our At-Risk Strategy is designed to re-engage customers who may be at risk of churn by offering them exclusive discounts tailored to their purchase history. As customers increase their purchase frequency, they unlock progressively higher discount tiers within specific product categories, incentivizing them to continue patronizing our brand."
-			// }
-
-			// // Function to update strategy description
-			// function updateStrategydescription(subTier) {
-			// 	// Check if subTier exists in the strategyDescriptions object
-			// 	if (strategyDescriptions.hasOwnProperty(subTier)) {
-			// 		// Display strategy description
-			// 		displayStrategyDescription(strategyDescriptions[subTier]);
-			// 	} else {
-			// 		// Show a message indicating that there is no strategy description available for this tier
-			// 		document.getElementById('strategy-description').textContent = "No strategy description available for this tier.";
-			// 	}
-
-			// }
-			
-			// // Function to display strategy description
-			// function displayStrategyDescription(description) {
-			// 	document.getElementById('strategy-description').textContent = description;
-			// }
-
 		};
 	</script>
 
