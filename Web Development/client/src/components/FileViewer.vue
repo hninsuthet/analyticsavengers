@@ -37,7 +37,9 @@ const $loading = useLoading({
     "lock-scroll": true
 });
 
-const FLASK1_URL = 'http://localhost:3000'
+
+const FLASK1_URL = 'http://127.0.0.1:3000'
+
 const CleanData = async () => {
     console.log("uploading...");
     const headers = { 'Content-Type': 'multipart/form-data' };
@@ -158,7 +160,7 @@ const DataAnalysis = async () => {
 
 // Define navigatetosummarystatsclv function separately
 const navigatetodashboard = async () => {
-    window.location.href = '/src/dashboard.html';
+    window.location.href = '../dashboard.html';
 };
 
 // Define rundescriptivediagnostic function
