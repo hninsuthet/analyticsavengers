@@ -35,8 +35,8 @@ def get_data(df):
 
 ################################ High-Value Customer Strategy ################################
 # Full High-Value Function
-def high_value_strategy (data):
-    df_combined = get_data(data)
+def generate_high_value_strategy(df):
+    df_combined = get_data(df)
 
     # Get unique product list
     def process_product_list(df_combined):
@@ -62,13 +62,12 @@ def high_value_strategy (data):
             'MaxPurchaseValue': grouped.apply(lambda x: (x['Quantity'] * x['UnitPrice']).max()),
             'TotalSpend': grouped.apply(lambda x: (x['Quantity'] * x['UnitPrice']).sum()),
             'PurchaseFrequency': grouped['InvoiceNo'].nunique(),
-            'Recency': (pd.to_datetime('today') - grouped['InvoiceDate'].max()).dt.days,
+            'Recency': (pd.to_datetime('today') - pd.to_datetime(grouped['InvoiceDate'].max())).dt.days,
             'FavoriteCategory': grouped['Category'].apply(lambda x: x.mode()[0] if not x.mode().empty else np.nan),
             'NumberUniqueCategories': grouped['Category'].nunique(),
             'AverageUnitPrice': grouped['UnitPrice'].mean(),
             'MaxUnitPrice': grouped['UnitPrice'].max(),
-            # Assuming InvoiceDate is already in datetime format for 'DaysAsCustomer' calculation
-            'DaysAsCustomer': (grouped['InvoiceDate'].max() - grouped['InvoiceDate'].min()).dt.days,
+            'DaysAsCustomer': (pd.to_datetime(grouped['InvoiceDate'].max()) - pd.to_datetime(grouped['InvoiceDate'].min())).dt.days,
             'NumberOfTransactions': grouped.size(),
         }).reset_index()
 
@@ -103,9 +102,9 @@ def high_value_strategy (data):
         # Predict on the testing set
         predictions = xgb_model.predict(X_test)
 
-        return xgb_model
+        return xgb_model, X_train
     
-    xgb_model = train_xgboost (xgb_features)
+    xgb_model, X_train = train_xgboost (xgb_features)
 
 
     def train_rf (df_combined):
@@ -153,7 +152,7 @@ def high_value_strategy (data):
                 return None
             
             # Apply feature engineering
-            features_df = create_features1(customer_data)
+            features_df = xgb_create_features(customer_data)
             
             # Ensure we're only using the features the model was trained on
             # Assume these are the features (excluding 'CustomerID' and target variable)
@@ -208,7 +207,7 @@ def high_value_strategy (data):
         
         if not higher_price_products.empty:
             # Find the product with unit price closest to the predicted unit price
-            higher_price_products['PriceDifference'] = abs(higher_price_products['UnitPrice'] - predicted_unit_price)
+            higher_price_products['PriceDifference'] = abs(higher_price_products['UnitPrice'] - predicted_unit_price_numeric)
             suggested_product = higher_price_products.sort_values(by='PriceDifference').iloc[0]
             
             
@@ -254,13 +253,6 @@ def high_value_strategy (data):
 
 
 ################################ Loyal Customer Strategy ################################
-def loyal_strategy(df):
-    # get combined dataframe
-    # columns retrieved: CustomerID, Tier, Sub_Tier, InvoiceNo, Description, InvoiceDate, UnitPrice, Quantity, Country, Gender, Category
-    df_combined = get_data(df)
-
-    return
-
 # SUB-FUNCTION
 def transactions_dataframe(df_combined):
     # First, filter the DataFrame for only 'Loyal' sub-tier customers

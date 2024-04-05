@@ -37,8 +37,8 @@ const $loading = useLoading({
     "lock-scroll": true
 });
 
-
-const FLASK1_URL = 'https://analyticavengers.pythonanywhere.com'
+// const FLASK1_URL = 'https://analyticavengers.pythonanywhere.com'
+const FLASK1_URL = 'http://localhost:3000'
 
 const CleanData = async () => {
     console.log("uploading...");
@@ -141,7 +141,8 @@ const DataAnalysis = async () => {
 
 // Define navigatetosummarystatsclv function separately
 const navigatetodashboard = async () => {
-    window.location.href = '../dashboard.html';
+    window.location.href = '/src/dashboard.html';
+    // window.location.href = '../dashboard.html';
 };
 
 // Define rundescriptivediagnostic function
