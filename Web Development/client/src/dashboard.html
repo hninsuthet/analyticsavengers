@@ -263,306 +263,6 @@
 
 	</div>
 	<!--END OF FINAL CUSTOMER PROFILING-->
-
-	<!--Start oF EARNEST'S CUSTOMER PROFILING-->
-	<div class="row">
-		<div class="col-md-12">
-			<div class="customer-profiling-container" style="border-width: 0;">
-				<h3>Customer Profiling</h3>
-				<p>Click on different sub-tiers to discover details for each customer group in every tier. <br>
-					Explore country and gender distribution, bestselling categories, and order details to understand
-					each tier's
-					customers better.</p>
-				<div class="row">
-					<!-- Dropdown to select Sub-tier -->
-					<div class="col-2">
-						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="subTierDropdown"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Select Subtier
-							</button>
-							<div class="dropdown-menu" aria-labelledby="subTierDropdown">
-								<a class="dropdown-item" id="platinum-dropdown" href="#"
-									onclick="showSubTier('Platinum')">Platinum</a>
-								<a class="dropdown-item" href="#" onclick="showSubTier('Gold')">Gold</a>
-								<a class="dropdown-item" href="#" onclick="showSubTier('Silver')">Silver</a>
-								<a class="dropdown-item" href="#" onclick="showSubTier('Iron')">Iron</a>
-								<a class="dropdown-item" href="#" onclick="showSubTier('Lead')">Lead</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-10">
-						<div id="subtier" style="font-weight: bolder; font-style: italic;"></div>
-					</div>
-				</div>
-				<!-- Sub-tier containers (initially hidden) -->
-				<div id="Platinum" class="subtier-content" style="display: none;">
-					<div class="row">
-						<!-- Averages Container -->
-						<div class="row">
-
-							<div class="row">
-								<div id="platinum-averages" class="container custom-container" style="border-width: 0;">
-									<h4>Averages</h4>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col">no. of cust</div>
-								<div class="col">avg order val</div>
-								<div class="col">avg no. of items</div>
-							</div>
-
-
-						</div>
-					</div>
-					<!-- Bestselling Container -->
-					<div class="row">
-						<div class="row">
-							<div id="platinum-bestselling" class="container custom-container" style="border-width: 0;">
-								<h4>Best Selling Products</h4>
-							</div>
-						</div>
-
-						<div class="row" id="platinum-bestsellingproducts" style="margin-left: 100px;">
-						</div>
-					</div>
-					<!-- Demographics Container -->
-					<div class="row" style="margin-top: 50px;">
-
-						<div class="row">
-							<div id="platinum-demographics" class="container custom-container" style="border-width: 0;">
-								<h4>Demographics</h4>
-							</div>
-						</div>
-
-						<div class="row">
-
-							<div class="col">
-								<!-- Gender Pie Chart -->
-								<div id="platinum-gender-chart"></div>
-								<div class="tooltip" id="tooltip1"></div>
-							</div>
-
-							<div class="col" style="margin-left: 200px;">
-								<!-- Countries Stacked Bar Chart -->
-								<div id="platinum-countries-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="Gold" class="subtier-content" style="display: none;">
-					<div class="row">
-						<!-- Averages Container -->
-						<div class="row">
-							<div class="row">
-								<div id="gold-averages" class="container custom-container" style="border-width: 0;">
-									<h4>Averages</h4>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col">no. of cust</div>
-								<div class="col">avg order val</div>
-								<div class="col">avg no. of items</div>
-							</div>
-						</div>
-					</div>
-					<!-- Bestselling Container -->
-					<div class="row">
-						<div class="row">
-							<div id="gold-bestselling" class="container custom-container" style="border-width: 0;">
-								<h4>Best Selling Products</h4>
-							</div>
-						</div>
-
-						<div class="row" id="gold-bestsellingproducts" style="margin-left: 100px;">
-						</div>
-					</div>
-					<!-- Demographics Container -->
-					<div class="row" style="margin-top: 50px;">
-
-						<div class="row">
-							<div id="gold-demographics" class="container custom-container" style="border-width: 0;">
-								<h4>Demographics</h4>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col">
-								<!-- Gender Pie Chart -->
-								<div id="gold-gender-chart"></div>
-								<div class="tooltip" id="tooltip1"></div>
-							</div>
-							<div class="col" style="margin-left: 200px;">
-								<!-- Countries Stacked Bar Chart -->
-								<div id="gold-countries-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="Silver" class="subtier-content" style="display: none;">
-					<div class="row">
-						<!-- Averages Container -->
-						<div class="row">
-
-							<div class="row">
-								<div id="silver-averages" class="container custom-container" style="border-width: 0;">
-									<h4>Averages</h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">no. of cust</div>
-								<div class="col">avg order val</div>
-								<div class="col">avg no. of items</div>
-							</div>
-						</div>
-					</div>
-					<!-- Bestselling Container -->
-					<div class="row">
-						<div class="row">
-							<div id="silver-bestselling" class="container custom-container" style="border-width: 0;">
-								<h4>Best Selling Products</h4>
-							</div>
-						</div>
-						<div class="row" id="silver-bestsellingproducts" style="margin-left: 100px;">
-						</div>
-					</div>
-					<!-- Demographics Container -->
-					<div class="row" style="margin-top: 50px;">
-
-						<div class="row">
-							<div id="silver-demographics" class="container custom-container" style="border-width: 0;">
-								<h4>Demographics</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<!-- Gender Pie Chart -->
-								<div id="silver-gender-chart"></div>
-								<div class="tooltip" id="tooltip1"></div>
-							</div>
-							<div class="col" style="margin-left: 200px;">
-								<!-- Countries Stacked Bar Chart -->
-								<div id="silver-countries-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="Iron" class="subtier-content" style="display: none;">
-					<div class="row">
-						<!-- Averages Container -->
-						<div class="row">
-							<div class="row">
-								<div id="iron-averages" class="container custom-container" style="border-width: 0;">
-									<h4>Averages</h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">no. of cust</div>
-								<div class="col">avg order val</div>
-								<div class="col">avg no. of items</div>
-							</div>
-						</div>
-					</div>
-					<!-- Bestselling Container -->
-					<div class="row">
-						<div class="row">
-							<div id="iron-bestselling" class="container custom-container" style="border-width: 0;">
-								<h4>Best Selling Products</h4>
-							</div>
-						</div>
-						<div class="row" id="iron-bestsellingproducts" style="margin-left: 100px;">
-						</div>
-					</div>
-					<!-- Demographics Container -->
-					<div class="row" style="margin-top: 50px;">
-						<div class="row">
-							<div id="iron-demographics" class="container custom-container" style="border-width: 0;">
-								<h4>Demographics</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<!-- Gender Pie Chart -->
-								<div id="iron-gender-chart"></div>
-								<div class="tooltip" id="tooltip1"></div>
-							</div>
-							<div class="col" style="margin-left: 200px;">
-								<!-- Countries Stacked Bar Chart -->
-								<div id="iron-countries-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="Lead" class="subtier-content" style="display: none;">
-					<div class="row">
-						<!-- Averages Container -->
-						<div class="row">
-							<div class="row">
-								<div id="lead-averages" class="container custom-container" style="border-width: 0;">
-									<h4>Averages</h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col">no. of cust</div>
-								<div class="col">avg order val</div>
-								<div class="col">avg no. of items</div>
-							</div>
-						</div>
-					</div>
-					<!-- Bestselling Container -->
-					<div class="row">
-						<div class="row">
-							<div id="lead-bestselling" class="container custom-container" style="border-width: 0;">
-								<h4>Best Selling Products</h4>
-							</div>
-						</div>
-						<div class="row" id="lead-bestsellingproducts" style="margin-left: 100px;">
-						</div>
-					</div>
-					<!-- Demographics Container -->
-					<div class="row" style="margin-top: 50px;">
-						<div class="row">
-							<div id="lead-demographics" class="container custom-container" style="border-width: 0;">
-								<h4>Demographics</h4>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<!-- Gender Pie Chart -->
-								<div id="lead-gender-chart"></div>
-								<div class="tooltip" id="tooltip1"></div>
-							</div>
-							<div class="col" style="margin-left: 200px;">
-								<!-- Countries Stacked Bar Chart -->
-								<div id="lead-countries-chart"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<script>
-				// JavaScript to show selected subtier
-				function showSubTier(subTierName) {
-					// Hide all subtier contents
-					d3.selectAll('.subtier-content').style('display', 'none');
-					// Show selected subtier content
-					d3.select('#' + subTierName).style('display', 'block');
-					document.getElementById("subtier").innerHTML = subTierName
-				}
-
-			</script>
-		</div>
-	</div>
-	</div>
-
-	</div>
-
 	<!-- Tooltip -->
 	<div class="tooltip" id="tooltip" style="opacity: 0">
 		<div class="tooltip-content"></div>
@@ -580,13 +280,6 @@
 		}
 
 	</script>
-
-
-
-
-	</div>
-	</div>
-	</div>
 
 	</div>
 
@@ -614,17 +307,16 @@
 					const chart_data = response.data;
 					const metrics = JSON.parse(chart_data['metrics']);
 					const clv_tier = JSON.parse(chart_data['clv_tier']);
-          const monthly_clv = JSON.parse(chart_data['monthly_clv_df']);
+					const monthly_clv = JSON.parse(chart_data['monthly_clv_df']);
 					const customer_profiling = JSON.parse(chart_data['customer_profiling_df'])
 					// const monthly_sales = JSON.parse(chart_data['monthly_sales']);
-					console.log(customer_profiling)
 					plot_metrics(metrics);
 					plot_clv_tiers(clv_tier);
 					plot_clv_tiers_monthly_sales(monthly_clv)
 					plot_customer_profiling(customer_profiling)
-          // filter_row_platinum(customer_profiling)
-          // list_country(customer_profiling)
-          // best_selling_products(customer_profiling)
+					// filter_row_platinum(customer_profiling)
+					// list_country(customer_profiling)
+					// best_selling_products(customer_profiling)
 				})
 				.catch(error => {
 					console.error('Error fetching data:', error);
@@ -632,7 +324,6 @@
 
 			// Function to visualize data using D3.js 
 			function plot_metrics(data) {
-				console.log(data);
 				document.getElementById("box1-revenue").innerText =
 					"$" + parseFloat(data[0]["Total Revenue"]).toLocaleString('en-US', { maximumFractionDigits: 2 });
 
@@ -655,7 +346,6 @@
 			}
 
 			function plot_clv_tiers(data) {
-				console.log(data);
 				// Data processing
 				// Data processing
 				const tier = data.map((d) => d.Tier);
@@ -888,508 +578,507 @@
 					.text("Low Tier: Potential Revenue");
 			}
 
-      function plot_clv_tiers_monthly_sales(data) {
-        console.log(data);
-        // Data processing
-          // Convert date strings to date objects
-          const parseDate = d3.utcParse("%Y-%m");
-          const formatMonth = d3.timeFormat("%b %Y");
-          data.forEach(function (d) {
-            d.Month = parseDate(d.Month);
-            d.Month = formatMonth(d.Month);
-          });
+			function plot_clv_tiers_monthly_sales(data) {
+				// Data processing
+				// Convert date strings to date objects
+				const parseDate = d3.utcParse("%Y-%m");
+				const formatMonth = d3.timeFormat("%b %Y");
+				data.forEach(function (d) {
+					d.Month = parseDate(d.Month);
+					d.Month = formatMonth(d.Month);
+				});
 
-          const month = data.map((d) => d.Month);
-          const revenue = data.map((d) => +d.Total_Revenue);
-          const formattedRevenue = revenue.map((d) => d.toLocaleString('en-US', {maximumFractionDigits: 2}));
+				const month = data.map((d) => d.Month);
+				const revenue = data.map((d) => +d.Total_Revenue);
+				const formattedRevenue = revenue.map((d) => d.toLocaleString('en-US', { maximumFractionDigits: 2 }));
 
-          // Calculate the maximum stacked value for each month
-          const maxStackedValues = data.map(d => +d.Low_Tier + +d.Middle_Tier + +d.High_Tier);
-          const maxStackedValue = d3.max(maxStackedValues);
-          const maxRevenue = d3.max(revenue);
-          const maxCLV = d3.max(data, (d) => +d.Average_CLV);
+				// Calculate the maximum stacked value for each month
+				const maxStackedValues = data.map(d => +d.Low_Tier + +d.Middle_Tier + +d.High_Tier);
+				const maxStackedValue = d3.max(maxStackedValues);
+				const maxRevenue = d3.max(revenue);
+				const maxCLV = d3.max(data, (d) => +d.Average_CLV);
 
-          // Set up the SVG container dimensions
-          const margin = { top: 30, right: 120, bottom: 40, left: 90 };
-          const width = 900 - margin.left - margin.right;
-          const height = 250 - margin.top - margin.bottom;
+				// Set up the SVG container dimensions
+				const margin = { top: 30, right: 120, bottom: 40, left: 90 };
+				const width = 900 - margin.left - margin.right;
+				const height = 250 - margin.top - margin.bottom;
 
-          // ===== 1st Container: CLV vs Revenue =====
-          // Create SVG element for first dual-axis chart
-          const svg = d3
-            .select("#chart2-container")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
+				// ===== 1st Container: CLV vs Revenue =====
+				// Create SVG element for first dual-axis chart
+				const svg = d3
+					.select("#chart2-container")
+					.append("svg")
+					.attr("width", width + margin.left + margin.right)
+					.attr("height", height + margin.top + margin.bottom)
+					.append("g")
+					.attr("transform", `translate(${margin.left},${margin.top})`);
 
-          // Create x-axis scale for both bar and line graphs
-          const xScale = d3
-            .scaleBand()
-            .domain(month)
-            .range([0, width])
-            .padding(0.1);
+				// Create x-axis scale for both bar and line graphs
+				const xScale = d3
+					.scaleBand()
+					.domain(month)
+					.range([0, width])
+					.padding(0.1);
 
-          // Create y-axis scale for stacked bar chart
-          const yScaleBar = d3
-            .scaleLinear()
-            .domain([0, maxStackedValue])
-            .range([height, 0]);
+				// Create y-axis scale for stacked bar chart
+				const yScaleBar = d3
+					.scaleLinear()
+					.domain([0, maxStackedValue])
+					.range([height, 0]);
 
-          // Create y-axis scale for sales revenue line graph
-          const yScaleRevenue = d3
-            .scaleLinear()
-            .domain([0, maxRevenue])
-            .range([height, 0]);
+				// Create y-axis scale for sales revenue line graph
+				const yScaleRevenue = d3
+					.scaleLinear()
+					.domain([0, maxRevenue])
+					.range([height, 0]);
 
-          // Append x axis to svg
-          svg
-            .append("g")
-            .attr("class", "x-axis")
-            .attr("transform", `translate(0,${height})`)
-            .call(d3.axisBottom(xScale));
+				// Append x axis to svg
+				svg
+					.append("g")
+					.attr("class", "x-axis")
+					.attr("transform", `translate(0,${height})`)
+					.call(d3.axisBottom(xScale));
 
-          // Append left y-axis for stacked bar chart
-          svg.append("g")
-          .attr("class", "y-axis")
-          .call(d3.axisLeft(yScaleBar));
+				// Append left y-axis for stacked bar chart
+				svg.append("g")
+					.attr("class", "y-axis")
+					.call(d3.axisLeft(yScaleBar));
 
-          // Append y-axis label for stacked bar chart
-          svg.append("text")
-              .attr("class", "y-axis-label")
-              .attr("text-anchor", "middle")
-              .attr("transform", "rotate(-90)")
-              .attr("x", -height / 2)
-              .attr("y", -margin.left + 35) // Increase value (eg. 30 to 35) to shift right
-              .text("Number of Customers");
+				// Append y-axis label for stacked bar chart
+				svg.append("text")
+					.attr("class", "y-axis-label")
+					.attr("text-anchor", "middle")
+					.attr("transform", "rotate(-90)")
+					.attr("x", -height / 2)
+					.attr("y", -margin.left + 35) // Increase value (eg. 30 to 35) to shift right
+					.text("Number of Customers");
 
-          // Append right y-axis for revenue line chart
-          svg.append("g")
-          .attr("class", "y-axis")
-          .attr("transform", `translate(${width}, 0)`)
-          .call(d3.axisRight(yScaleRevenue));
+				// Append right y-axis for revenue line chart
+				svg.append("g")
+					.attr("class", "y-axis")
+					.attr("transform", `translate(${width}, 0)`)
+					.call(d3.axisRight(yScaleRevenue));
 
-          // Append y-axis label for revenue line chart
-          svg.append("text")
-              .attr("class", "y-axis-label")
-              .attr("text-anchor", "middle")
-              .attr("transform", `translate(${width}, ${height / 2}) rotate(90)`)
-              .attr("y", margin.right - 190) // Increase value (eg. 190 to 200) to shift right
-              .text("Revenue ($)");
+				// Append y-axis label for revenue line chart
+				svg.append("text")
+					.attr("class", "y-axis-label")
+					.attr("text-anchor", "middle")
+					.attr("transform", `translate(${width}, ${height / 2}) rotate(90)`)
+					.attr("y", margin.right - 190) // Increase value (eg. 190 to 200) to shift right
+					.text("Revenue ($)");
 
-          // Draw bars for Low Tier Customers
-          svg
-            .selectAll(".low-bar")
-            .data(data)
-            .enter()
-            .append("rect")
-            .attr("class", "low-bar")
-            .attr("x", (d) => xScale(d.Month))
-            .attr("y", (d) => yScaleBar(+d.Low_Tier))
-            .attr("width", xScale.bandwidth())
-            .attr("height", (d) => height - yScaleBar(+d.Low_Tier))
-            .attr("fill", "#1f77b4") // Adjust color as needed
-            .on("mouseover", function (event, d) {
-              const tooltip = d3.select("#tooltip");
-              tooltip.transition().duration(200).style("opacity", 0.9);
-              tooltip
-                .select(".tooltip-content")
-                .html(
-                  `<strong><u>${d.Month}</u></strong><br/>
+				// Draw bars for Low Tier Customers
+				svg
+					.selectAll(".low-bar")
+					.data(data)
+					.enter()
+					.append("rect")
+					.attr("class", "low-bar")
+					.attr("x", (d) => xScale(d.Month))
+					.attr("y", (d) => yScaleBar(+d.Low_Tier))
+					.attr("width", xScale.bandwidth())
+					.attr("height", (d) => height - yScaleBar(+d.Low_Tier))
+					.attr("fill", "#1f77b4") // Adjust color as needed
+					.on("mouseover", function (event, d) {
+						const tooltip = d3.select("#tooltip");
+						tooltip.transition().duration(200).style("opacity", 0.9);
+						tooltip
+							.select(".tooltip-content")
+							.html(
+								`<strong><u>${d.Month}</u></strong><br/>
                   <strong>Low Tier Customers:</strong> ${d.Low_Tier}<br/>
                   <strong>Total Customers:</strong> ${+d.Low_Tier + +d.Middle_Tier + +d.High_Tier}`
-                );
-            })
-            .on("mousemove", function (event) {
-              d3.select("#tooltip")
-                .style("left", event.pageX + 10 + "px")
-                .style("top", event.pageY - 28 + "px");
-            })
-            .on("mouseout", function () {
-              d3.select("#tooltip")
-                .transition()
-                .duration(500)
-                .style("opacity", 0);
-            });
+							);
+					})
+					.on("mousemove", function (event) {
+						d3.select("#tooltip")
+							.style("left", event.pageX + 10 + "px")
+							.style("top", event.pageY - 28 + "px");
+					})
+					.on("mouseout", function () {
+						d3.select("#tooltip")
+							.transition()
+							.duration(500)
+							.style("opacity", 0);
+					});
 
-          // Draw bars for Middle Tier Customers
-          svg
-            .selectAll(".middle-bar")
-            .data(data)
-            .enter()
-            .append("rect")
-            .attr("class", "middle-bar")
-            .attr("x", (d) => xScale(d.Month))
-            .attr("y", (d) => yScaleBar(+d.Low_Tier + +d.Middle_Tier))
-            .attr("width", xScale.bandwidth())
-            .attr("height", (d) => height - yScaleBar(+d.Middle_Tier))
-            .attr("fill", "#ff7f0e") // Adjust color as needed
-            .on("mouseover", function (event, d) {
-              const tooltip = d3.select("#tooltip");
-              tooltip.transition().duration(200).style("opacity", 0.9);
-              tooltip
-                .select(".tooltip-content")
-                .html(
-                  `<strong><u>${d.Month}</u></strong><br/>
+				// Draw bars for Middle Tier Customers
+				svg
+					.selectAll(".middle-bar")
+					.data(data)
+					.enter()
+					.append("rect")
+					.attr("class", "middle-bar")
+					.attr("x", (d) => xScale(d.Month))
+					.attr("y", (d) => yScaleBar(+d.Low_Tier + +d.Middle_Tier))
+					.attr("width", xScale.bandwidth())
+					.attr("height", (d) => height - yScaleBar(+d.Middle_Tier))
+					.attr("fill", "#ff7f0e") // Adjust color as needed
+					.on("mouseover", function (event, d) {
+						const tooltip = d3.select("#tooltip");
+						tooltip.transition().duration(200).style("opacity", 0.9);
+						tooltip
+							.select(".tooltip-content")
+							.html(
+								`<strong><u>${d.Month}</u></strong><br/>
                   <strong>Middle Tier Customers:</strong> ${d.Middle_Tier}<br/>
                   <strong>Total Customers:</strong> ${+d.Low_Tier + +d.Middle_Tier + +d.High_Tier}`
-                );
-            })
-            .on("mousemove", function (event) {
-              d3.select("#tooltip")
-                .style("left", event.pageX + 10 + "px")
-                .style("top", event.pageY - 28 + "px");
-            })
-            .on("mouseout", function () {
-              d3.select("#tooltip")
-                .transition()
-                .duration(500)
-                .style("opacity", 0);
-            });
+							);
+					})
+					.on("mousemove", function (event) {
+						d3.select("#tooltip")
+							.style("left", event.pageX + 10 + "px")
+							.style("top", event.pageY - 28 + "px");
+					})
+					.on("mouseout", function () {
+						d3.select("#tooltip")
+							.transition()
+							.duration(500)
+							.style("opacity", 0);
+					});
 
-          // Draw bars for High Tier Customers
-          svg
-            .selectAll(".high-bar")
-            .data(data)
-            .enter()
-            .append("rect")
-            .attr("class", "high-bar")
-            .attr("x", (d) => xScale(d.Month))
-            .attr("y", (d) => yScaleBar(+d.Low_Tier + +d.Middle_Tier + +d.High_Tier))
-            .attr("width", xScale.bandwidth())
-            .attr("height", (d) => height - yScaleBar(+d.High_Tier))
-            .attr("fill", "#2ca02c") // Adjust color as needed
-            .on("mouseover", function (event, d) {
-              const tooltip = d3.select("#tooltip");
-              tooltip.transition().duration(200).style("opacity", 0.9);
-              tooltip
-                .select(".tooltip-content")
-                .html(
-                  `<strong><u>${d.Month}</u></strong><br/> 
+				// Draw bars for High Tier Customers
+				svg
+					.selectAll(".high-bar")
+					.data(data)
+					.enter()
+					.append("rect")
+					.attr("class", "high-bar")
+					.attr("x", (d) => xScale(d.Month))
+					.attr("y", (d) => yScaleBar(+d.Low_Tier + +d.Middle_Tier + +d.High_Tier))
+					.attr("width", xScale.bandwidth())
+					.attr("height", (d) => height - yScaleBar(+d.High_Tier))
+					.attr("fill", "#2ca02c") // Adjust color as needed
+					.on("mouseover", function (event, d) {
+						const tooltip = d3.select("#tooltip");
+						tooltip.transition().duration(200).style("opacity", 0.9);
+						tooltip
+							.select(".tooltip-content")
+							.html(
+								`<strong><u>${d.Month}</u></strong><br/> 
                   <strong>High Tier Customers:</strong> ${d.High_Tier}<br/>
                   <strong>Total Customers:</strong> ${+d.Low_Tier + +d.Middle_Tier + +d.High_Tier}`
-                );
-            })
-            .on("mousemove", function (event) {
-              d3.select("#tooltip")
-                .style("left", event.pageX + 10 + "px")
-                .style("top", event.pageY - 28 + "px");
-            })
-            .on("mouseout", function () {
-              d3.select("#tooltip")
-                .transition()
-                .duration(500)
-                .style("opacity", 0);
-            });
+							);
+					})
+					.on("mousemove", function (event) {
+						d3.select("#tooltip")
+							.style("left", event.pageX + 10 + "px")
+							.style("top", event.pageY - 28 + "px");
+					})
+					.on("mouseout", function () {
+						d3.select("#tooltip")
+							.transition()
+							.duration(500)
+							.style("opacity", 0);
+					});
 
-        // Draw line for Total Revenue
-        const RevenueLine = d3.line()
-            .x((d) => xScale(d.Month) + xScale.bandwidth() / 2)
-            .y((d) => yScaleRevenue(+d.Total_Revenue));
+				// Draw line for Total Revenue
+				const RevenueLine = d3.line()
+					.x((d) => xScale(d.Month) + xScale.bandwidth() / 2)
+					.y((d) => yScaleRevenue(+d.Total_Revenue));
 
-        // Show tooltip for the line chart with number of customer as y-axis
-        // Append circles for each data point - for first line chart
-        svg.selectAll("circle")
-              .data(data)
-              .enter()
-              .append("circle")
-              .attr("cx", d => xScale(d.Month) + xScale.bandwidth() / 2)
-              .attr("cy", d => yScaleRevenue(+d.Total_Revenue))
-              .attr("r", 4)
-              .attr("fill", "#e41a1c")
-              // Add tooltips
-              .on("mouseover", function(event, d) {
-                const tooltip = d3.select("#tooltip");
-                tooltip.transition().duration(200).style("opacity", 0.9);
-                tooltip
-                  .select(".tooltip-content")
-                  .html(`<strong><u> ${d.Month} </u></strong><br>
-                        <strong>Revenue:</strong> $${(+d.Total_Revenue).toLocaleString('en-US', {maximumFractionDigits: 2})}`)
-                  .style("left", (event.pageX) + "px")
-                  .style("top", (event.pageY - 28) + "px");
-              })
-              .on("mouseout", function(d) {
-                  tooltip.transition()
-                      .duration(500)
-                      .style("opacity", 0);
-              });
+				// Show tooltip for the line chart with number of customer as y-axis
+				// Append circles for each data point - for first line chart
+				svg.selectAll("circle")
+					.data(data)
+					.enter()
+					.append("circle")
+					.attr("cx", d => xScale(d.Month) + xScale.bandwidth() / 2)
+					.attr("cy", d => yScaleRevenue(+d.Total_Revenue))
+					.attr("r", 4)
+					.attr("fill", "#e41a1c")
+					// Add tooltips
+					.on("mouseover", function (event, d) {
+						const tooltip = d3.select("#tooltip");
+						tooltip.transition().duration(200).style("opacity", 0.9);
+						tooltip
+							.select(".tooltip-content")
+							.html(`<strong><u> ${d.Month} </u></strong><br>
+                        <strong>Revenue:</strong> $${(+d.Total_Revenue).toLocaleString('en-US', { maximumFractionDigits: 2 })}`)
+							.style("left", (event.pageX) + "px")
+							.style("top", (event.pageY - 28) + "px");
+					})
+					.on("mouseout", function (d) {
+						tooltip.transition()
+							.duration(500)
+							.style("opacity", 0);
+					});
 
-        // Create 1st legend
-        const legendSvg1 = d3
-          .select("#legend2-container")
-          .append("svg")
-          .attr("width", 350)
-          .attr("height", height + margin.top + margin.bottom);
+				// Create 1st legend
+				const legendSvg1 = d3
+					.select("#legend2-container")
+					.append("svg")
+					.attr("width", 350)
+					.attr("height", height + margin.top + margin.bottom);
 
-        // Add legend title
-        legendSvg1.append("text")
-          .attr("x", 20)
-          .attr("y", 20)
-          .style("font-weight", "bold") 
-          .style("text-decoration", "underline") 
-          .text("Legend");
+				// Add legend title
+				legendSvg1.append("text")
+					.attr("x", 20)
+					.attr("y", 20)
+					.style("font-weight", "bold")
+					.style("text-decoration", "underline")
+					.text("Legend");
 
-        // Legend 1 - High Tier Customers
-        legendSvg1
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 12)
-          .attr("fill", "#2ca02c")
-          .attr("transform", "translate(0,40)");
+				// Legend 1 - High Tier Customers
+				legendSvg1
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 12)
+					.attr("fill", "#2ca02c")
+					.attr("transform", "translate(0,40)");
 
-        legendSvg1
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 50)
-          .text("High Tier Customers");
+				legendSvg1
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 50)
+					.text("High Tier Customers");
 
-        // Legend 2 - Middle Tier Customers
-        legendSvg1
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 12)
-          .attr("fill", "#ff7f0e")
-          .attr("transform", "translate(0,70)");
+				// Legend 2 - Middle Tier Customers
+				legendSvg1
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 12)
+					.attr("fill", "#ff7f0e")
+					.attr("transform", "translate(0,70)");
 
-        legendSvg1
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 80)
-          .text("Middle Tier Customers");
+				legendSvg1
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 80)
+					.text("Middle Tier Customers");
 
-        // Legend 3 - Low Tier Customers
-        legendSvg1
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 12)
-          .attr("fill", "#1f77b4")
-          .attr("transform", "translate(0,100)");
+				// Legend 3 - Low Tier Customers
+				legendSvg1
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 12)
+					.attr("fill", "#1f77b4")
+					.attr("transform", "translate(0,100)");
 
-        legendSvg1
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 110)
-          .text("Low Tier Customers");
-          
-        // Legend 4 - Revenue
-        legendSvg1
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 2.5)
-          .attr("fill", "#e41a1c")
-          .attr("transform", "translate(0,135)");
+				legendSvg1
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 110)
+					.text("Low Tier Customers");
 
-        legendSvg1
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 140)
-          .text("Revenue");
+				// Legend 4 - Revenue
+				legendSvg1
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 2.5)
+					.attr("fill", "#e41a1c")
+					.attr("transform", "translate(0,135)");
 
-        // ===== 2nd Container: CLV vs Revenue =====
-        // Create SVG element for second dual-axis chart
-        const svg2 = d3
-          .select("#chart3-container")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", `translate(${margin.left},${margin.top})`);
+				legendSvg1
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 140)
+					.text("Revenue");
 
-        // Create y-axis scale for CLV bar chart
-        const yScaleCLV = d3
-          .scaleLinear()
-          .domain([0, maxCLV])
-          .range([height, 0]);
-        
-          // Append x axis to svg
-        svg2
-          .append("g")
-          .attr("class", "x-axis")
-          .attr("transform", `translate(0,${height})`)
-          .call(d3.axisBottom(xScale));
+				// ===== 2nd Container: CLV vs Revenue =====
+				// Create SVG element for second dual-axis chart
+				const svg2 = d3
+					.select("#chart3-container")
+					.append("svg")
+					.attr("width", width + margin.left + margin.right)
+					.attr("height", height + margin.top + margin.bottom)
+					.append("g")
+					.attr("transform", `translate(${margin.left},${margin.top})`);
 
-        // Append left y-axis for CLV bar chart
-        svg2.append("g")
-          .attr("class", "y-axis")
-          .call(d3.axisLeft(yScaleCLV))
-          .append("text");
+				// Create y-axis scale for CLV bar chart
+				const yScaleCLV = d3
+					.scaleLinear()
+					.domain([0, maxCLV])
+					.range([height, 0]);
 
-        // Append y-axis label for CLV bar chart
-        svg2.append("text")
-            .attr("class", "y-axis-label")
-            .attr("text-anchor", "middle")
-            .attr("transform", "rotate(-90)")
-            .attr("x", -height / 2)
-            .attr("y", -margin.left + 35) // Increase value (eg. 30 to 35) to shift right
-            .text("Average CLV ($)");
+				// Append x axis to svg
+				svg2
+					.append("g")
+					.attr("class", "x-axis")
+					.attr("transform", `translate(0,${height})`)
+					.call(d3.axisBottom(xScale));
 
-        // Append right y-axis for sales revenue line chart
-        svg2.append("g")
-          .attr("class", "y-axis") 
-          .attr("transform", `translate(${width}, 0)`)
-          .call(d3.axisRight(yScaleRevenue));
+				// Append left y-axis for CLV bar chart
+				svg2.append("g")
+					.attr("class", "y-axis")
+					.call(d3.axisLeft(yScaleCLV))
+					.append("text");
 
-        // Append y-axis label for revenue line chart
-        svg2.append("text")
-            .attr("class", "y-axis-label")
-            .attr("text-anchor", "middle")
-            .attr("transform", `translate(${width}, ${height / 2}) rotate(90)`)
-            .attr("y", margin.right - 190) // Increase value (eg. 190 to 200) to shift right
-            .text("Revenue ($)");
+				// Append y-axis label for CLV bar chart
+				svg2.append("text")
+					.attr("class", "y-axis-label")
+					.attr("text-anchor", "middle")
+					.attr("transform", "rotate(-90)")
+					.attr("x", -height / 2)
+					.attr("y", -margin.left + 35) // Increase value (eg. 30 to 35) to shift right
+					.text("Average CLV ($)");
 
-        // Create line generator for Average CLV
-        const CLVLine = d3.line()
-          .x((d) => xScale(d.Month) + xScale.bandwidth() / 2)
-          .y((d) => yScaleCLV(+d.Average_CLV));
+				// Append right y-axis for sales revenue line chart
+				svg2.append("g")
+					.attr("class", "y-axis")
+					.attr("transform", `translate(${width}, 0)`)
+					.call(d3.axisRight(yScaleRevenue));
 
-        // Create 2nd legend
-        const legendSvg2 = d3
-          .select("#legend3-container")
-          .append("svg")
-          .attr("width", 350)
-          .attr("height", height + margin.top + margin.bottom);
+				// Append y-axis label for revenue line chart
+				svg2.append("text")
+					.attr("class", "y-axis-label")
+					.attr("text-anchor", "middle")
+					.attr("transform", `translate(${width}, ${height / 2}) rotate(90)`)
+					.attr("y", margin.right - 190) // Increase value (eg. 190 to 200) to shift right
+					.text("Revenue ($)");
 
-        // Add legend title
-        legendSvg2.append("text")
-          .attr("x", 20)
-          .attr("y", 20)
-          .style("font-weight", "bold") 
-          .style("text-decoration", "underline") 
-          .text("Legend");
+				// Create line generator for Average CLV
+				const CLVLine = d3.line()
+					.x((d) => xScale(d.Month) + xScale.bandwidth() / 2)
+					.y((d) => yScaleCLV(+d.Average_CLV));
 
-        // Legend 1 - Revenue
-        legendSvg2
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 2.5)
-          .attr("fill", "#e41a1c") // red
-          .attr("transform", "translate(0,45)");
+				// Create 2nd legend
+				const legendSvg2 = d3
+					.select("#legend3-container")
+					.append("svg")
+					.attr("width", 350)
+					.attr("height", height + margin.top + margin.bottom);
 
-        legendSvg2
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 50)
-          .text("Revenue");
+				// Add legend title
+				legendSvg2.append("text")
+					.attr("x", 20)
+					.attr("y", 20)
+					.style("font-weight", "bold")
+					.style("text-decoration", "underline")
+					.text("Legend");
 
-        // Legend 2 - Average CLV
-        legendSvg2
-          .append("rect")
-          .attr("width", 12)
-          .attr("height", 2.5)
-          .attr("fill", "black") 
-          .attr("transform", "translate(0,75)");
+				// Legend 1 - Revenue
+				legendSvg2
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 2.5)
+					.attr("fill", "#e41a1c") // red
+					.attr("transform", "translate(0,45)");
 
-        legendSvg2
-          .append("text")
-          .attr("x", 20)
-          .attr("y", 80)
-          .text("Average CLV");
-        
-        // Drawing the lines for Total Revenue and Average CLV
-        data.forEach((d, i) => {
-          // console.log(i, month);
+				legendSvg2
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 50)
+					.text("Revenue");
 
-          // Draw line for Total Revenue for svg - for chart that has number of customers as y-axis
-          svg.append("path")
-              .datum(data) // Bind data to the element
-              .attr("fill", "none")
-              .attr("stroke", "#e41a1c") // red
-              .attr("stroke-width", 2.5)
-              .attr("d", RevenueLine);
+				// Legend 2 - Average CLV
+				legendSvg2
+					.append("rect")
+					.attr("width", 12)
+					.attr("height", 2.5)
+					.attr("fill", "black")
+					.attr("transform", "translate(0,75)");
 
-          // Draw line for Total Revenue for svg2 - for chart that has average-clv as y-axis
-          svg2.append("path")
-            .datum(data)
-            .attr("fill", "none")
-            .attr("stroke", "#e41a1c") // red
-            .attr("stroke-width", 2)
-            .attr("d", RevenueLine);
-          
-          // Draw line for Average CLV
-          svg2.append("path")
-              .datum(data)
-              .attr("fill", "none")
-              .attr("stroke", "black") 
-              .attr("stroke-width", 2.5)
-              .attr("d", CLVLine);
+				legendSvg2
+					.append("text")
+					.attr("x", 20)
+					.attr("y", 80)
+					.text("Average CLV");
 
-          // Draw circles for Total Revenue for svg2 - to show on tooltip
-          svg2.selectAll(".revenue-circle")
-            .data(data)
-            .enter()
-            .append("circle")
-            .attr("class", "revenue-circle")
-            .attr("cx", (d) => xScale(d.Month) + xScale.bandwidth() / 2)
-            .attr("cy", (d) => yScaleRevenue(+d.Total_Revenue))
-            .attr("r", 4)
-            .attr("fill", "#e41a1c")
-            .on("mouseover", function (event, d) {
-              const tooltip = d3.select("#tooltip");
-              tooltip.transition().duration(200).style("opacity", 0.9);
-              tooltip
-                .select(".tooltip-content")
-                .html(
-                  `<strong><u>${d.Month}</u></strong><br/>
-                  <strong>Revenue:</strong> $${(+d.Total_Revenue).toLocaleString('en-US', {maximumFractionDigits: 2})}`
-                );
-              tooltip
-                .style("left", event.pageX + 10 + "px")
-                .style("top", event.pageY - 28 + "px");
-            })
-            .on("mouseout", function () {
-              d3.select("#tooltip")
-                .transition()
-                .duration(500)
-                .style("opacity", 0);
-            });
+				// Drawing the lines for Total Revenue and Average CLV
+				data.forEach((d, i) => {
+					// console.log(i, month);
 
-          // Draw circles for Average CLV - to show the tooltip
-          svg2.selectAll(".clv-circle")
-            .data(data)
-            .enter()
-            .append("circle")
-            .attr("class", "clv-circle")
-            .attr("cx", (d) => xScale(d.Month) + xScale.bandwidth() / 2)
-            .attr("cy", (d) => yScaleCLV(+d.Average_CLV))
-            .attr("r", 4)
-            .attr("fill", "black")
-            .on("mouseover", function (event, d) {
-              const tooltip = d3.select("#tooltip");
-              tooltip.transition().duration(200).style("opacity", 0.9);
-              tooltip
-                .select(".tooltip-content")
-                .html(
-                  `<strong><u>${d.Month}</u></strong><br/>
-                  <strong>Average CLV:</strong> $${(+d.Average_CLV).toLocaleString('en-US', {maximumFractionDigits: 2})}`
-                );
-              tooltip
-                .style("left", event.pageX + 10 + "px")
-                .style("top", event.pageY - 28 + "px");
-            })
-            .on("mouseout", function () {
-              d3.select("#tooltip")
-                .transition()
-                .duration(500)
-                .style("opacity", 0);
-            });
-        });
+					// Draw line for Total Revenue for svg - for chart that has number of customers as y-axis
+					svg.append("path")
+						.datum(data) // Bind data to the element
+						.attr("fill", "none")
+						.attr("stroke", "#e41a1c") // red
+						.attr("stroke-width", 2.5)
+						.attr("d", RevenueLine);
 
-        // ===== 3rd Container: Insights =====
-        // Find the month of maxCLV and maxRevenue
-        const maxCLVMonth = data.find(d => +d.Average_CLV === maxCLV).Month;
-        const maxRevenueMonth = data.find(d => +d.Total_Revenue === maxRevenue).Month;
-        
-        // Add Insights if the peak of CLV and Revenue are in different months
-        if (maxCLVMonth !== maxRevenueMonth) {
-          document.getElementById("insights-container").innerHTML = `
+					// Draw line for Total Revenue for svg2 - for chart that has average-clv as y-axis
+					svg2.append("path")
+						.datum(data)
+						.attr("fill", "none")
+						.attr("stroke", "#e41a1c") // red
+						.attr("stroke-width", 2)
+						.attr("d", RevenueLine);
+
+					// Draw line for Average CLV
+					svg2.append("path")
+						.datum(data)
+						.attr("fill", "none")
+						.attr("stroke", "black")
+						.attr("stroke-width", 2.5)
+						.attr("d", CLVLine);
+
+					// Draw circles for Total Revenue for svg2 - to show on tooltip
+					svg2.selectAll(".revenue-circle")
+						.data(data)
+						.enter()
+						.append("circle")
+						.attr("class", "revenue-circle")
+						.attr("cx", (d) => xScale(d.Month) + xScale.bandwidth() / 2)
+						.attr("cy", (d) => yScaleRevenue(+d.Total_Revenue))
+						.attr("r", 4)
+						.attr("fill", "#e41a1c")
+						.on("mouseover", function (event, d) {
+							const tooltip = d3.select("#tooltip");
+							tooltip.transition().duration(200).style("opacity", 0.9);
+							tooltip
+								.select(".tooltip-content")
+								.html(
+									`<strong><u>${d.Month}</u></strong><br/>
+                  <strong>Revenue:</strong> $${(+d.Total_Revenue).toLocaleString('en-US', { maximumFractionDigits: 2 })}`
+								);
+							tooltip
+								.style("left", event.pageX + 10 + "px")
+								.style("top", event.pageY - 28 + "px");
+						})
+						.on("mouseout", function () {
+							d3.select("#tooltip")
+								.transition()
+								.duration(500)
+								.style("opacity", 0);
+						});
+
+					// Draw circles for Average CLV - to show the tooltip
+					svg2.selectAll(".clv-circle")
+						.data(data)
+						.enter()
+						.append("circle")
+						.attr("class", "clv-circle")
+						.attr("cx", (d) => xScale(d.Month) + xScale.bandwidth() / 2)
+						.attr("cy", (d) => yScaleCLV(+d.Average_CLV))
+						.attr("r", 4)
+						.attr("fill", "black")
+						.on("mouseover", function (event, d) {
+							const tooltip = d3.select("#tooltip");
+							tooltip.transition().duration(200).style("opacity", 0.9);
+							tooltip
+								.select(".tooltip-content")
+								.html(
+									`<strong><u>${d.Month}</u></strong><br/>
+                  <strong>Average CLV:</strong> $${(+d.Average_CLV).toLocaleString('en-US', { maximumFractionDigits: 2 })}`
+								);
+							tooltip
+								.style("left", event.pageX + 10 + "px")
+								.style("top", event.pageY - 28 + "px");
+						})
+						.on("mouseout", function () {
+							d3.select("#tooltip")
+								.transition()
+								.duration(500)
+								.style("opacity", 0);
+						});
+				});
+
+				// ===== 3rd Container: Insights =====
+				// Find the month of maxCLV and maxRevenue
+				const maxCLVMonth = data.find(d => +d.Average_CLV === maxCLV).Month;
+				const maxRevenueMonth = data.find(d => +d.Total_Revenue === maxRevenue).Month;
+
+				// Add Insights if the peak of CLV and Revenue are in different months
+				if (maxCLVMonth !== maxRevenueMonth) {
+					document.getElementById("insights-container").innerHTML = `
             <div class="desc">
-              Although revenue reached its peak in ${maxRevenueMonth} at $${maxRevenue.toLocaleString('en-US', {maximumFractionDigits: 2})}, 
-              it is crucial to prioritise ${maxCLVMonth} due to its higher Customer Lifetime Value (CLV), which peaked at $${maxCLV.toLocaleString('en-US', {maximumFractionDigits: 2})}. 
+              Although revenue reached its peak in ${maxRevenueMonth} at $${maxRevenue.toLocaleString('en-US', { maximumFractionDigits: 2 })}, 
+              it is crucial to prioritise ${maxCLVMonth} due to its higher Customer Lifetime Value (CLV), which peaked at $${maxCLV.toLocaleString('en-US', { maximumFractionDigits: 2 })}. 
               This indicates that customers were more valuable during ${maxCLVMonth} compared to ${maxRevenueMonth}.
             </div>`;
-        }
-      }
+				}
+			}
 
 			function plot_customer_profiling(data) {
 				var dropdownMenu = d3.select("#dropdownMenu");
@@ -1697,152 +1386,152 @@
 
 			// //Fourth Row of Dashboard with the Customer Profiling
 			// // Automatically show the first dropdown (Platinum) contents
-      // document.addEventListener("DOMContentLoaded", function() {
-      //     document.getElementById("platinum-dropdown").click();
-      // });
+			// document.addEventListener("DOMContentLoaded", function() {
+			//     document.getElementById("platinum-dropdown").click();
+			// });
 
-      // const sub_tiers = ["Platinum", "Gold", "Silver", "Iron", "Lead"]
-      // for (let i = 0; i < sub_tiers.length; i++){
-      //    //Customers
-      // // Load the CSV data
-      // function filter_row_platinum(data){
-      //   // Filter the row for the Platinum sub-tier
+			// const sub_tiers = ["Platinum", "Gold", "Silver", "Iron", "Lead"]
+			// for (let i = 0; i < sub_tiers.length; i++){
+			//    //Customers
+			// // Load the CSV data
+			// function filter_row_platinum(data){
+			//   // Filter the row for the Platinum sub-tier
 
 
-      //   const platinumData = data.find(row => row.Sub_Tier === sub_tiers[i]);
-          
-      //     // Prepare the gender data
-      //     const genderData = [
-      //         {"gender": "Female", "proportion": parseFloat(platinumData.Female_Proportion)},
-      //         {"gender": "Male", "proportion": parseFloat(platinumData.Male_Proportion)}
-      //     ];
+			//   const platinumData = data.find(row => row.Sub_Tier === sub_tiers[i]);
 
-          
-      //     // Create the gender pie chart 
-      //     const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-gender-chart").append("svg")
-      //         .attr("width", 400) // Adjust as needed
-      //         .attr("height", 400); // Adjust as needed
+			//     // Prepare the gender data
+			//     const genderData = [
+			//         {"gender": "Female", "proportion": parseFloat(platinumData.Female_Proportion)},
+			//         {"gender": "Male", "proportion": parseFloat(platinumData.Male_Proportion)}
+			//     ];
 
-      //     const radius = Math.min(400, 400) / 2;
-      //     const g = svg.append("g").attr("transform", "translate(" + 400 / 2 + "," + 400 / 2 + ")");
-          
-      //     const color = d3.scaleOrdinal(["#4169e1", "#ff4500"]);
-          
-      //     const pie = d3.pie().value(d => d.proportion);
-      //     const path = d3.arc().outerRadius(radius).innerRadius(0);
-          
-      //     const arc = g.selectAll(".arc")
-      //         .data(pie(genderData))
-      //         .enter().append("g").attr("class", "arc");
-          
-      //     arc.append("path").attr("d", path)
-      //         .attr("fill", d => color(d.data.gender));
 
-      //     // Add labels, tooltips, etc. as needed
-      // }
+			//     // Create the gender pie chart 
+			//     const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-gender-chart").append("svg")
+			//         .attr("width", 400) // Adjust as needed
+			//         .attr("height", 400); // Adjust as needed
 
-      // };
+			//     const radius = Math.min(400, 400) / 2;
+			//     const g = svg.append("g").attr("transform", "translate(" + 400 / 2 + "," + 400 / 2 + ")");
 
-      // function list_country(data){
-      //   const countriesString = data[i].Proportion_of_Countries.slice(1, -1);
-      //   const countries = countriesString.split(','); // Assuming countries are comma-separated
+			//     const color = d3.scaleOrdinal(["#4169e1", "#ff4500"]);
 
-      //   // Select the container and bind the countries data to create list items
-      //   d3.select('#' + sub_tiers[i].toLowerCase() + '-countries-chart')
-      //   .append('ol') // Changed from .selectAll('li') as we now need to append an 'ol' element
-      //   .selectAll('li')
-      //   .data(countries)
-      //   .enter()
-      //   .append('li')
-      //   .text(d => d.trim()) // Trim to remove any extra spaces around country names
-      //   .style('font-size', '20px') // Styling can still be applied as before
-      //   .style('font-family', 'Roboto, sans-serif') // Apply any font-family
-      //   .style('margin-bottom', '5px')
-      //   .style('background-color', '#FAF9F6')
-      //   .style('border-left', '5px solid #3498db')
-      //   .style('padding', '5px 10px')
-      //   .style('box-shadow', '2px 2px 5px rgba(0,0,0,0.1)')
-      //   .style('transition', 'transform 0.2s'); // For hover effect
+			//     const pie = d3.pie().value(d => d.proportion);
+			//     const path = d3.arc().outerRadius(radius).innerRadius(0);
 
-      //   // Adding hover effect to scale items
-      //   d3.selectAll('#countries ol li').on('mouseover', function() {
-      //       d3.select(this)
-      //         .transition()
-      //         .duration(200)
-      //         .style('transform', 'scale(1.05)');
-      //   }).on('mouseout', function() {
-      //       d3.select(this)
-      //         .transition()
-      //         .duration(200)
-      //         .style('transform', 'scale(1)');
-      //   });
-      // }
+			//     const arc = g.selectAll(".arc")
+			//         .data(pie(genderData))
+			//         .enter().append("g").attr("class", "arc");
 
-      // //Best Selling Products
-      // function best_selling_products(data){
-      //   function createBarChart(data) {
-      //         const margin = {top: 30, right: 30, bottom: 70, left: 60},
-      //               width = 460 - margin.left - margin.right,
-      //               height = 400 - margin.top - margin.bottom;
+			//     arc.append("path").attr("d", path)
+			//         .attr("fill", d => color(d.data.gender));
 
-      //         // Append the svg object to the body
-      //         const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-bestsellingproducts")
-      //           .append("svg")
-      //             .attr("width", width + margin.left + margin.right)
-      //             .attr("height", height + margin.top + margin.bottom)
-      //           .append("g")
-      //             .attr("transform", `translate(${margin.left},${margin.top})`);
+			//     // Add labels, tooltips, etc. as needed
+			// }
 
-      //         // X axis
-      //         const x = d3.scaleBand()
-      //           .range([ 0, width ])
-      //           .domain(data.map(d => d.product))
-      //           .padding(0.2);
-      //         svg.append("g")
-      //           .attr("transform", `translate(0,${height})`)
-      //           .call(d3.axisBottom(x))
-      //           .selectAll("text")
-      //             .attr("transform", "translate(-10,0)rotate(-15)")
-      //             .style("text-anchor", "end");
+			// };
 
-      //         // Add Y axis
-      //         const y = d3.scaleLinear()
-      //           .domain([0, d3.max(data, d => d.sales)])
-      //           .range([ height, 0]);
-      //         svg.append("g")
-      //           .call(d3.axisLeft(y));
+			// function list_country(data){
+			//   const countriesString = data[i].Proportion_of_Countries.slice(1, -1);
+			//   const countries = countriesString.split(','); // Assuming countries are comma-separated
 
-      //         // Bars
-      //         svg.selectAll("mybar")
-      //           .data(data)
-      //           .join("rect")
-      //             .attr("x", d => x(d.product))
-      //             .attr("y", d => y(d.sales))
-      //             .attr("width", x.bandwidth())
-      //             .attr("height", d => height - y(d.sales))
-      //             .attr("fill", "#69b3a2");
+			//   // Select the container and bind the countries data to create list items
+			//   d3.select('#' + sub_tiers[i].toLowerCase() + '-countries-chart')
+			//   .append('ol') // Changed from .selectAll('li') as we now need to append an 'ol' element
+			//   .selectAll('li')
+			//   .data(countries)
+			//   .enter()
+			//   .append('li')
+			//   .text(d => d.trim()) // Trim to remove any extra spaces around country names
+			//   .style('font-size', '20px') // Styling can still be applied as before
+			//   .style('font-family', 'Roboto, sans-serif') // Apply any font-family
+			//   .style('margin-bottom', '5px')
+			//   .style('background-color', '#FAF9F6')
+			//   .style('border-left', '5px solid #3498db')
+			//   .style('padding', '5px 10px')
+			//   .style('box-shadow', '2px 2px 5px rgba(0,0,0,0.1)')
+			//   .style('transition', 'transform 0.2s'); // For hover effect
 
-      //         // Optionally, add interactivity, labels, etc.
-      //     }
+			//   // Adding hover effect to scale items
+			//   d3.selectAll('#countries ol li').on('mouseover', function() {
+			//       d3.select(this)
+			//         .transition()
+			//         .duration(200)
+			//         .style('transform', 'scale(1.05)');
+			//   }).on('mouseout', function() {
+			//       d3.select(this)
+			//         .transition()
+			//         .duration(200)
+			//         .style('transform', 'scale(1)');
+			//   });
+			// }
 
-      //     // Assuming the "Best_Selling_Products" column contains JSON-like strings
-      //     // Parse the first row's "Best_Selling_Products" data
-      //     for (let y = 0; y < data.length; y++){
-      //       if (data[y].Sub_Tier == sub_tiers[i]){
-      //         var test = data[y].Best_Selling_Products.replace(/"/g, '')
-      //         var bestSellingProducts = JSON.parse(test.replace(/'/g, '"'));
-              
-      //       }
-      //     }
+			// //Best Selling Products
+			// function best_selling_products(data){
+			//   function createBarChart(data) {
+			//         const margin = {top: 30, right: 30, bottom: 70, left: 60},
+			//               width = 460 - margin.left - margin.right,
+			//               height = 400 - margin.top - margin.bottom;
 
-      //     // Convert the object into an array of objects each containing 'product' and 'sales'
-      //     var productsData = Object.keys(bestSellingProducts).map(function(key) {
-      //         return { product: key, sales: bestSellingProducts[key] };
-      //     });
+			//         // Append the svg object to the body
+			//         const svg = d3.select("#" + sub_tiers[i].toLowerCase() + "-bestsellingproducts")
+			//           .append("svg")
+			//             .attr("width", width + margin.left + margin.right)
+			//             .attr("height", height + margin.top + margin.bottom)
+			//           .append("g")
+			//             .attr("transform", `translate(${margin.left},${margin.top})`);
 
-      //     // Now, productsData is ready for use in creating the bar chart
-      //     createBarChart(productsData);
-      // }
+			//         // X axis
+			//         const x = d3.scaleBand()
+			//           .range([ 0, width ])
+			//           .domain(data.map(d => d.product))
+			//           .padding(0.2);
+			//         svg.append("g")
+			//           .attr("transform", `translate(0,${height})`)
+			//           .call(d3.axisBottom(x))
+			//           .selectAll("text")
+			//             .attr("transform", "translate(-10,0)rotate(-15)")
+			//             .style("text-anchor", "end");
+
+			//         // Add Y axis
+			//         const y = d3.scaleLinear()
+			//           .domain([0, d3.max(data, d => d.sales)])
+			//           .range([ height, 0]);
+			//         svg.append("g")
+			//           .call(d3.axisLeft(y));
+
+			//         // Bars
+			//         svg.selectAll("mybar")
+			//           .data(data)
+			//           .join("rect")
+			//             .attr("x", d => x(d.product))
+			//             .attr("y", d => y(d.sales))
+			//             .attr("width", x.bandwidth())
+			//             .attr("height", d => height - y(d.sales))
+			//             .attr("fill", "#69b3a2");
+
+			//         // Optionally, add interactivity, labels, etc.
+			//     }
+
+			//     // Assuming the "Best_Selling_Products" column contains JSON-like strings
+			//     // Parse the first row's "Best_Selling_Products" data
+			//     for (let y = 0; y < data.length; y++){
+			//       if (data[y].Sub_Tier == sub_tiers[i]){
+			//         var test = data[y].Best_Selling_Products.replace(/"/g, '')
+			//         var bestSellingProducts = JSON.parse(test.replace(/'/g, '"'));
+
+			//       }
+			//     }
+
+			//     // Convert the object into an array of objects each containing 'product' and 'sales'
+			//     var productsData = Object.keys(bestSellingProducts).map(function(key) {
+			//         return { product: key, sales: bestSellingProducts[key] };
+			//     });
+
+			//     // Now, productsData is ready for use in creating the bar chart
+			//     createBarChart(productsData);
+			// }
 		};
 	</script>
 
