@@ -52,14 +52,14 @@ def calculate_sub_tiers(df):
                 return 'At-Risk'
         elif tier == 'Middle Tier CLV':
             if f != f_low or m >= m_high:  # Assuming "higher" for Middle CLV tier
-                return 'Bronze'
+                return 'Potential Spenders'
             else:
-                return 'Copper'
+                return 'Casual Spenders'
         elif tier == 'Low Tier CLV':
             if f != f_low or m >= m_high:  # Assuming "higher" for Low CLV tier
-                return 'Iron'
+                return 'Least Engaged'
             else:
-                return 'Lead'
+                return 'Asleep'
         return 'Unassigned'
 
     # Apply the subtier assignment function
