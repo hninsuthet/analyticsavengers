@@ -1115,52 +1115,60 @@
 			function plot_customer_profiling(data) {
 				var dropdownMenu = d3.select("#dropdownMenu");
 
-				// Extract unique CLV_Tier values excluding "None"
-				var uniqueTiers = Array.from(new Set(data.map(d => d.Tier))).filter(tier => tier !== "None");
+				// Extract unique CLV_Tier values excluding entries with Sub_Tier "Unassigned" under "High" tier
+				var uniqueTiers = Array.from(new Set(data
+					.filter(d => !(d.Tier === "High Tier CLV" && d.Sub_Tier === "Unassigned"))
+					.map(d => d.Tier)));
 
 				// // Sort uniqueTiers
 				// uniqueTiers.sort();
 
 				// Create dropdown menu items dynamically based on unique CLV_Tier values
 				dropdownMenu.selectAll("li")
-					.data(uniqueTiers)
+					.data(uniqueTiers.sort((a, b) => (a === "High" ? -1 : (a === "Middle" ? 0 : 1)))) // Sort tiers
 					.enter()
 					.append("li")
 					.attr("class", "nav-item dropdown")
-					.html(function (tier) {
+					.html(function(tier) {
 						var subTiers = data.filter(d => d.Tier === tier).map(d => d.Sub_Tier);
 						var dropdownItems = subTiers.map(subTier => `<a class="dropdown-item" href="#" onclick="updateSelectedSubTier('${subTier}')">${subTier}</a>`).join('');
 						return `
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">${tier}</a>
+								<a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">${tier}</a>
 								<div class="dropdown-menu">
 								${dropdownItems}
 								</div>
 							</li>
-							`;
+						`;
 					});
 
 				// Set the default selected Sub Tier to "High-Value" in the heading
 				var defaultSubTier = "High-Value";
-				document.getElementById("selectedSubTierHeading").innerText = "Selected Sub Tier: " + defaultSubTier;
+				document.getElementById("selectedSubTierHeading").innerText = "Selected Sub Tier: " + defaultSubTier + " Customers";
 
+				//display subtier explanation 
+				updateSubtierExplanation(defaultSubTier,data)
+				
 				//Calculate and display total number of customer for the default subtier 
-				updateTotalCustomers(defaultSubTier, data)
+				updateTotalCustomers(defaultSubTier,data)
 
 				//Calculate and display average order value for the default subtier 
-				updateAverageOrderValue(defaultSubTier, data)
+				updateAverageOrderValue(defaultSubTier,data)
 
 				//Calculate and display average order size for the default subtier
 				updateAverageOrderSize(defaultSubTier, data)
 
 				//Calculate and display best selling products for the default subtier
-				updateBestSellingProducts(defaultSubTier, data)
+				updateBestSellingProducts(defaultSubTier,data)
 
 				//Calculate and display Gender for the default subtier 
 				updateGenderDistribution(defaultSubTier, data)
 
 				//Calculate and display Countries for the default subtier
-				updateCountries(defaultSubTier, data)
+				updateCountries(defaultSubTier,data)
+
+				//display the Strategies for the default subtier 
+				updateStrategy(defaultSubTier,data)
 
 				// Set event listeners for dropdown menu items
 				var dropdownItems = document.querySelectorAll(".dropdown-item");
@@ -1251,13 +1259,7 @@
 					var bestSellingProductsData = JSON.parse(entry.Best_Selling_Products.replace(/'/g, '"'));
 
 					// Convert the data to an array of objects
-					var dataArray = Object.entries(bestSellingProductsData).map(([product, value]) => ({ product, value }));
-
-					// Sort the products by value (sales count) in descending order
-					dataArray.sort((a, b) => b.value - a.value);
-
-					// Take only the top 5 best selling products
-					var topProducts = dataArray.slice(0, 5);
+					var topProducts= Object.entries(bestSellingProductsData).map(([product, value]) => ({ product, value }));
 
 					// Set up chart dimensions
 					var margin = { top: 20, right: 100, bottom: 40, left: 200};
@@ -1282,7 +1284,7 @@
 					var y = d3.scaleBand()
 						.range([height, 0]) // Adjusted range to start from the bottom (height) to the top (0)
 						.padding(0.1)
-						.domain(topProducts.map(d => d.product));
+						.domain(topProducts.slice().reverse().map(d => d.product)); // sort by descending order
 
 					// Add X axis
 					svg.append("g")
@@ -1387,7 +1389,6 @@
 				}
 			}
 
-
 			function updateCountries(subTier, data) {
 				// Find the entry for the specified sub-tier
 				var entry = data.find(d => d.Sub_Tier === subTier);
@@ -1476,6 +1477,23 @@
 				}
 			}
 
+			function updateStrategy(subTier, data) {
+				if (subTier === "High-Value") {
+					plot_high_value_strategy(data);
+					console.log(data)
+				} 
+				else if (subTier === "At-Risk") {
+					plot_at_risk_strategy(data);
+				} 
+				else if (subTier === "Loyal") {
+					plot_loyal_strategy(data);
+				} 
+				else {
+					// Show a message indicating that there is no strategy for this tier
+					document.querySelector(".strategy-table").innerHTML = '<tr><td colspan="4">There is No Strategy for this Tier</td></tr>';
+				}
+			}
+
 			function displayStrategyData(data, subTier) {
 				let newHeadings = {};
 				
@@ -1533,49 +1551,43 @@
 			function plot_high_value_strategy(data) {
 				// Example: Assuming data is available or fetched asynchronously
 				displayStrategyData(data, "High-Value");
-				// console.log(data);
 			}
 
 			function plot_at_risk_strategy(data) {
 				// Example: Assuming data is available or fetched asynchronously
 				displayStrategyData(data, "At-Risk");
-				// Example: Asynchronous data fetching (uncomment to use)
-				// d3.csv("../Web Development/server/output/at_risk_strategy.csv")
-				//     .then(function (data) {
-				//         displayStrategyData(data, "At-Risk");
-				//     })
-				//     .catch(function (error) {
-				//         console.error('Error fetching At-Risk strategy data:', error);
-				//         document.querySelector(".strategy-table").innerText = "Error fetching data";
-				//     });
 			}
 
 			function plot_loyal_strategy(data) {
 				// Example: Assuming data is available or fetched asynchronously
 				displayStrategyData(data, "Loyal");
-				// Example: Asynchronous data fetching (uncomment to use)
-				// d3.csv("../Web Development/server/output/loyal_strategy.csv")
-				//     .then(function (data) {
-				//         displayStrategyData(data, "Loyal");
-				//     })
-				//     .catch(function (error) {
-				//         console.error('Error fetching Loyal strategy data:', error);
-				//         document.querySelector(".strategy-table").innerText = "Error fetching data";
-				//     });
 			}
 
-			function updateStrategy(subTier) {
-				if (subTier === "High-Value") {
-					plot_high_value_strategy(high_value_strategy);
-					console.log(data)
-				} else if (subTier === "At-Risk") {
-					plot_at_risk_strategy(at_risk_strategy);
-				} else if (subTier === "Loyal") {
-					plot_loyal_strategy(loyal_strategy);
+			// Object mapping subTiers to strategy descriptions
+			const strategyDescriptions = {
+				"High-Value": "High Value Strategy: This initiative is tailored to our most valuable customers, providing them with personalized recommendations for premium products that align with their preferences. By catering to their discerning tastes, we aim to boost their engagement and encourage additional purchases of high-value items, effectively implementing an up-selling strategy.",
+
+				"Loyal": "Loyal Strategy: With our Loyal Strategy, we focus on nurturing customer loyalty through a targeted cross-selling approach. By leveraging sophisticated recommender systems based on past purchase behavior, we introduce loyal customers to complementary products that enhance their overall experience and deepen their relationship with our brand.",
+
+				"At-Risk": "At-Risk Strategy: Our At-Risk Strategy is designed to re-engage customers who may be at risk of churn by offering them exclusive discounts tailored to their purchase history. As customers increase their purchase frequency, they unlock progressively higher discount tiers within specific product categories, incentivizing them to continue patronizing our brand."
+			};
+
+			// Function to update strategy description
+			function updateStrategydescription(subTier) {
+				// Check if subTier exists in the strategyDescriptions object
+				if (strategyDescriptions.hasOwnProperty(subTier)) {
+					// Display strategy description
+					displayStrategyDescription(strategyDescriptions[subTier]);
 				} else {
-					// Show a message indicating that there is no strategy for this tier
-					document.querySelector(".strategy-table").innerHTML = '<tr><td colspan="4">There is No Strategy for this Tier</td></tr>';
+					// Show a message indicating that there is no strategy description available for this tier
+					document.getElementById('strategy-description').textContent = "No strategy description available for this tier.";
 				}
+
+			}
+			
+			// Function to display strategy description
+			function displayStrategyDescription(description) {
+				document.getElementById('strategy-description').textContent = description;
 			}
 
 		};
