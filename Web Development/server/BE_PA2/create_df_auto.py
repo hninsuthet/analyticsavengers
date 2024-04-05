@@ -139,3 +139,67 @@ def get_profiling_df(df):
     profiling_df = df[profiling_columns].copy()
     
     return profiling_df
+
+# Function that creates a dataframe for strategy analysis
+def get_strategy_df(df):
+    # Get a list of all the columns in the dataframe
+    columns = df.columns
+
+    # Columns that are needed for the calculations of strategy analysis
+    strategy_columns = ['CustomerID','InvoiceNo', 'StockCode','Description', 'InvoiceDate','UnitPrice', 'Quantity', 'Country', 'Gender', 'Category']
+
+    # Iterate through each required column and find the best match
+    for i, column in enumerate(strategy_columns):
+        if column not in columns:
+            # Use fuzzy matching to find the best match
+            best_match, score = process.extractOne(column, columns)
+            if score < 80:  # Adjusted threshold for a better match
+                # If the best match score is below a certain threshold, try difflib
+                best_match = difflib.get_close_matches(column, columns, n=1, cutoff=0.8)
+                if best_match:
+                    strategy_columns[i] = best_match[0]
+                else:
+                    raise ValueError(f"No good match found for column '{column}'")
+            else:
+                strategy_columns[i] = best_match
+        else:
+            # If it's an exact match, keep the original column name
+            strategy_columns[i] = column
+
+    # Create a new DataFrame with only the required columns
+    strategy_df = df[strategy_columns].copy()
+    
+    return strategy_df
+
+def get_unique_products_df(df):
+    # Get a list of all the columns in the dataframe
+    columns = df.columns
+
+    # Columns that are needed for getting unique products
+    products_columns = ['Description', 'UnitPrice', 'Category']
+
+    # Iterate through each required column and find the best match
+    for i, column in enumerate(products_columns):
+        if column not in columns:
+            # Use fuzzy matching to find the best match
+            best_match, score = process.extractOne(column, columns)
+            if score < 80:  # Adjusted threshold for a better match
+                # If the best match score is below a certain threshold, try difflib
+                best_match = difflib.get_close_matches(column, columns, n=1, cutoff=0.8)
+                if best_match:
+                    products_columns[i] = best_match[0]
+                else:
+                    raise ValueError(f"No good match found for column '{column}'")
+            else:
+                products_columns[i] = best_match
+        else:
+            # If it's an exact match, keep the original column name
+            products_columns[i] = column
+
+    # Create a new DataFrame with only the required columns
+    df_productList = df[products_columns].copy()
+
+    # Drop duplicates based on 'Description' while keeping the first occurrence
+    unique_products_df = df_productList.drop_duplicates(subset=['Description'], keep='first')
+    
+    return unique_products_df
