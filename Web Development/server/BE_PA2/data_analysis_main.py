@@ -39,9 +39,7 @@ def full_data_analysis(cleaned_data):
     # Convert dataframes to JSON format
     metrics_json = metrics.to_json(orient='records')
     clv_tier_json = clv_tier.to_json(orient='records')
-    # monthly_sales_json = monthly_sales.to_json(orient='records')
     monthly_clv_df_json = monthly_clv_df.to_json(orient='records', default_handler=str)
-    # monthly_clv_df_json = monthly_clv_df.to_json(orient='records')
     customer_profiling_df_json = customer_profiling_df.to_json(orient='records')
     at_risk_strategy_df_json = at_risk_strategy_df.to_json(orient='records')
     loyal_strategy_df_json = loyal_strategy_df.to_json(orient='records')
@@ -59,9 +57,4 @@ def full_data_analysis(cleaned_data):
         'high_value_strategy_df': high_value_strategy_df_json
     }
 
-    # print(type(response_data))
-    # Return JSON response
     return response_data
-
-    # return (metrics, sales_trends)
-    # pass

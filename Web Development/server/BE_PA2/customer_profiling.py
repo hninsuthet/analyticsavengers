@@ -1,6 +1,5 @@
 import pandas as pd
 import math
-import ast
 
 from create_df_auto import get_profiling_df
 from create_rfm_subtiers import calculate_sub_tiers

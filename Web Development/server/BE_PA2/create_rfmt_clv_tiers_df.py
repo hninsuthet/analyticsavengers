@@ -1,7 +1,6 @@
 import pandas as pd 
 import numpy as np
 import datetime as dt
-import math
 
 # BG/NBD and Gamma-Gamma model from lifetimes package
 from sklearn.metrics import mean_squared_error

@@ -1,10 +1,4 @@
-import pandas as pd 
-import numpy as np
-import datetime as dt
-import math
-
 from create_rfmt_clv_tiers_df import get_clv_tiers
-import pandas as pd
 
 def calculate_sub_tiers(df):
 

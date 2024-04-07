@@ -3,7 +3,6 @@ import numpy as np
 import datetime as dt
 
 # BG/NBD and Gamma-Gamma model from lifetimes package
-from sklearn.cluster import KMeans
 from sklearn.metrics import mean_squared_error
 from lifetimes import BetaGeoFitter
 from lifetimes import GammaGammaFitter

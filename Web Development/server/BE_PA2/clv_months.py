@@ -1,6 +1,4 @@
 import pandas as pd 
-import numpy as np
-import datetime as dt
 
 from create_rfmt_clv_tiers_df import get_clv_tiers
 from create_df_auto import get_clv_df

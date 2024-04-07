@@ -172,5 +172,4 @@ def full_data_clean(filename, file): # remove argument: output_excel
     print(duplicates_after_cleaning)
     print(nullvalues_after_cleaning)
 
-    # return cleaned_df, cleaning_time_info, rows_before_cleaning, duplicates_before_cleaning, nullvalues_before_cleaning, rows_after_cleaning, duplicates_after_cleaning, nullvalues_after_cleaning
     return cleaned_df

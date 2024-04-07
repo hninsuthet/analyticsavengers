@@ -37,7 +37,6 @@ const $loading = useLoading({
     "lock-scroll": true
 });
 
-// const FLASK1_URL = 'https://analyticavengers.pythonanywhere.com'
 const FLASK1_URL = 'http://localhost:3000'
 
 const CleanData = async () => {
@@ -84,11 +83,10 @@ const CleanData = async () => {
         }
     } catch (err) {
         throw new Error('Data Cleaning failed')
-        // console.error('Data Analysis failed:', error);
     }
 }
 
-// Define rundescriptivediagnostic function
+// Define aftercleaningmodal function
 const aftercleaningmodal = async () => {
 
     // Display the modal once data analysis is done
@@ -115,7 +113,6 @@ const DataAnalysis = async () => {
 
         // Append each file to the FormData object
         uploadedFiles.forEach(file => {
-            console.log(file);
             formData.append('file', file);
         });
 
@@ -123,7 +120,6 @@ const DataAnalysis = async () => {
         sessionStorage.setItem("sessionId", sessionId);
         formData.append('sessionId', sessionId);
 
-        // console.log(formData)
         const response = await axios.post(`${FLASK1_URL}/dataanalysis`, formData, { headers });
         sessionStorage.setItem('id', response.data.data_key);
 
@@ -135,17 +131,15 @@ const DataAnalysis = async () => {
     } catch (err) {
         console.log(err)
         throw new Error('Data Analysis failed')
-        // console.error('Data Analysis failed:', error);
     }
 };
 
 // Define navigatetosummarystatsclv function separately
 const navigatetodashboard = async () => {
     window.location.href = '/src/dashboard.html';
-    // window.location.href = '../dashboard.html';
 };
 
-// Define rundescriptivediagnostic function
+// Define analysiswithdashboard function
 const analysiswithdashboard = async () => {
     // Call the DataAnalysis function
     // await DataAnalysis();

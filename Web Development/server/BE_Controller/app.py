@@ -1,10 +1,7 @@
-from flask import Flask, jsonify, request, send_file, Response, session
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
-from werkzeug.utils import secure_filename
-import os
 import requests
 import pandas as pd
-import json
 
 DEBUG = True
 
@@ -50,7 +47,6 @@ def analyse_data_from_client():
     if request.method == 'POST':
         file = request.files['file']
         session_id = request.form.get('sessionId')
-        print(session_id)
 
         # Send the file content to Flask 2 for cleaning
         response = requests.post(f'{FLASK_2_URL}/analysedata', files={'file': (file.filename, file)})

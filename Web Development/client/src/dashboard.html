@@ -277,12 +277,7 @@
 							</div>
 						</div>
 					</div>
-					
-					
-
-
 					<!--End of Suggested Strategies-->
-
 					<!--End of Customer Profiling-->
 					</div>
 				
@@ -297,28 +292,9 @@
 
 	<!--END OF FINAL CUSTOMER PROFILING-->
 	<!-- Tooltip -->
-
-	<!-- <script>
-		// JavaScript to show selected subtier
-		function showSubTier(subTierName) {
-			// Hide all subtier contents
-			d3.selectAll('.subtier-content').style('display', 'none');
-			// Show selected subtier content
-			d3.select('#' + subTierName).style('display', 'block');
-			document.getElementById("subtier").innerHTML = subTierName
-		}
-
-	</script> -->
-
-	<!-- Tooltip -->
 	<div class="tooltip" id="tooltip" style="opacity: 0">
 		<div class="tooltip-content"></div>
 	</div>
-
-	<!-- Bootstrap JS and dependencies -->
-	<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
 
 	<!-- d3 JS -->
 	<script src="https://d3js.org/d3.v7.min.js"></script>
@@ -339,17 +315,10 @@
 					const at_risk_strategy = JSON.parse(chart_data['at_risk_strategy_df']);
 					const loyal_strategy = JSON.parse(chart_data['loyal_strategy_df']);
 					const high_value_strategy = JSON.parse(chart_data['high_value_strategy_df']);
-					// const monthly_sales = JSON.parse(chart_data['monthly_sales']);
 					plot_metrics(metrics);
 					plot_clv_tiers(clv_tier);
 					plot_clv_tiers_monthly_sales(monthly_clv);
 					plot_customer_profiling(customer_profiling, high_value_strategy, loyal_strategy, at_risk_strategy);
-					// plot_at_risk_strategy(at_risk_strategy);
-					// plot_loyal_strategy(loyal_strategy);
-					// plot_high_value_strategy(high_value_strategy);
-					// filter_row_platinum(customer_profiling)
-					// list_country(customer_profiling)
-					// best_selling_products(customer_profiling)
 				})
 				.catch(error => {
 					console.error('Error fetching data:', error);
